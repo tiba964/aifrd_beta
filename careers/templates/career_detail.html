@@ -1,0 +1,244 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    <!-- Page Banner Section -->
+    <section class="page-banner">
+      <div class="auto-container">
+        <h1>{{career}}</h1>
+      </div>
+
+      <div class="breadcrumb-box">
+        <div class="auto-container">
+          <ul class="bread-crumb clearfix">
+            <li><a href="{% url 'jobs:index' %}" style="font-size: 12px">HOME</a></li>
+            <li>
+              <a href="{% url 'jobs:get_involved' %}" style="font-size: 12px">GET INVOLVED</a>
+            </li>
+            <li>
+              <a href="{% url 'careers:career_list' %}" style="font-size: 12px">CAREERS</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!--End Banner Section -->
+
+    <!--Sidebar Page Container-->
+    <div class="sidebar-page-container">
+      <div class="auto-container">
+        <div class="row clearfix">
+          <!--Content Side / Blog Detail-->
+          <div class="content-side col-lg-8 col-md-12 col-sm-12">
+            <div class="post-details">
+              <!--Event Details-->
+              <div class="event-details">
+                <div class="lower-box">
+                  <div class="post-content">
+                    <h3 style="font-size:20px; padding-top: 10px;padding-bottom: 30px;">The Description</h3>                    <p> {{career.description}} </p>
+                  </div>
+                  <h2 style="font-size:20px;padding-bottom:20px;padding-top: 20px;">Job Information</h2>
+                  <div class=" clearfix">
+                    <div class="cause-info">
+                      <table class="table table-bordered">
+                        <tbody>
+                          <tr>
+                            <th scope="row">Contract Duration</th>
+                            <td>{{career.contract_duration}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Governorate</th>
+                            <td>{{career.governorate}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Working Hours</th>
+                            <td colspan="2">{{career.job_type}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Job Shift</th>
+                            <td colspan="2">{{career.job_shift}}</td>
+                          <tr>
+                            <th scope="row">Location</th>
+                            <td>{{career.location}}</td>
+                          </tr>
+                          </tr>
+                          <tr>
+                            <th scope="row">Posted</th>
+                            <td colspan="2">{{career.posted|date:'d M o'}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <h2 style="font-size:20px;padding-bottom:20px;padding-top: 20px;">Requirements</h2>
+                  <div class=" clearfix">
+                    <div class="cause-info">
+                      <table class="table table-bordered">
+                        <tbody>
+                          <tr>
+                            <th scope="row">Minimum Education </th>
+                            <td>{{career.minimum_education}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Minimum Experience</th>
+                            <td>{{career.minimum_experience}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Required Travel</th>
+                            <td colspan="2">{{career.required_travel}}</td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <h2 style="font-size:20px;padding-bottom:20px;padding-top: 20px;"> Job Status </h2>
+                  <div class=" clearfix">
+                    <div class="cause-info">
+                      <table class="table table-bordered">
+                        <tbody>
+                          <tr>
+                            <th scope="row">No Of Jobs </th>
+                            <td>{{career.no_of_jobs}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Published Date</th>
+                            <td>{{career.puplished|date:'d M o'}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Deadline Date</th>
+                            <td colspan="2">{{career.deadline|date:'d M o'}}</td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!--End Content Side-->
+
+          <!--Sidebar Side-->
+          <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+            <aside class="sidebar">
+
+
+              <!-- Category Widget -->
+              <div class="sidebar-widget category-widget">
+                <div class="widget-inner">
+                  <h3 style="font-size:20px">Role and responsibilities</h3>
+                  <div class="widget-content">
+                    <ul>
+                      <li class="active"> <a class="clearfix" 
+                            >{{career.role_1}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_2}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_3}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_4}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_5}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_6}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_7}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_8}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_9}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_10}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_11}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_12}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_13}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_14}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_15}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_16}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_17}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_18}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_19}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.role_20}}</a></li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Category Widget -->
+              <div class="sidebar-widget category-widget">
+                <div class="widget-inner">
+                  <h3 style="font-size:20px">Qualifications & Preferred Skills</h3>
+                  <div class="widget-content">
+                    <ul>
+                    
+                      <li class="active"> <a class="clearfix" 
+                        >{{career.skill_1}}</a></li>
+                      <li > <a class="clearfix" 
+                        >{{career.skill_2}}</a></li>
+                      <li> <a class="clearfix" 
+                        >{{career.skill_3}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.skill_4}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.skill_5}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.skill_6}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.skill_7}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.skill_8}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.skill_9}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.skill_10}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.skill_11}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.skill_12}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.skill_13}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.skill_14}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.skill_15}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.skill_16}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.skill_17}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.skill_18}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.skill_19}}</a></li>
+                      <li> <a class="clearfix" 
+                            >{{career.skill_20}}</a></li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+          <div class="link-box">
+            <a href="{% url 'jobs:volunteer' %}" class="theme-btn btn-style-two"><span class="btn-title">Apply Now</span></a>
+          </div>
+          <!--End Sidebar Side-->
+        </div>
+      </div>
+    </div>
+    <!-- End Sidebar Page Container -->
+
+    {% endblock body %}

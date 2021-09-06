@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block body %}
+
+      <!-- Page Banner Section -->
+      <section class="page-banner">
+        {% for i in bg_image_what_we_are_doing %}
+        <div class="image-layer" style="background-image: url('{{i.bg_image_what_we_are_doing.url}}')"></div>
+      
+        {% endfor %}
+
+        <div class="auto-container">
+          <h3> WHAT WE ARE DOING</h3>
+        </div>
+
+        <div class="breadcrumb-box">
+          <div class="auto-container">
+            <ul class="bread-crumb clearfix">
+              <li><a href="{% url 'jobs:index' %}" style="font-size: 12px">HOME</a></li>
+              <li class="active">WHAT WE ARE DOING</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!--End Banner Section -->
+   <!--What We Do-->
+    <section class="what-we-do">
+        <div class="auto-container">
+          <div class="" style="padding-bottom:20px;padding-top:40px;text-align:center">            
+                <!-- <h2 >What We Are Doing</h2> -->
+            </div>
+              <p style="text-align:center;padding-top:20px;padding-bottom:50px;"> Ashor Iraqi Foundation for Relief and Development responds to the world’s worst humanitarian crises and helps people to survive and rebuild their lives. AIFRD offers life-saving care and life-changing assistance to IDPs and returnee that effected to flee from war or disaster. AIFRD restores safety, dignity and hope to millions who are uprooted by conflict or disaster. AIFRD leads the way from harm to home</p>
+
+           
+            <div class="row clearfix">
+              {% for whatWeDo in whatWeDoss %} 
+                <!--Service Block-->
+                <div class="service-block col-lg-4 col-md-6 col-sm-12 wow fadeInLeft" data-wow-delay="0ms">
+                  
+                  <div class="inner-box">
+                    
+                        <div class="icon"><span class='{{ whatWeDo.whatDoDetail_icon_name }}'></span></div>
+                       
+                        <h3><a href="{% url 'jobs:what_we_are_doing_details' whatWeDo.id %}">{{whatWeDo.whatDoDetail_name}}</a></h3>
+                        <div class="text">{{whatWeDo.whatDoDetail_desc1}}</div>
+                        <div class="link-box"><a href="{% url 'jobs:what_we_are_doing_details' whatWeDo.id %}" class="theme-btn">Explore</a></div>
+                    </div>
+                  
+                </div>
+                {% endfor %}
+             
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock body %}

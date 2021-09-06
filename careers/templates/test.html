@@ -1,0 +1,291 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>{% trans  "Ashor Iraqi Foundation for Relief and Development" %}</title>
+
+  <!-- Stylesheets -->
+  <link href="{% static 'careers/css/bootstrap.css' %}" rel="stylesheet" />
+  <link href="{% static 'careers/css/style_arabic.css' %}" rel="stylesheet" />
+  <!-- Responsive File -->
+  <link href="{% static 'careers/css/responsive.css' %}" rel="stylesheet" />
+
+  <link rel="shortcut icon" href="{% static 'careers/images/logo.jpg' %}" type="image/x-icon" />
+  <!-- Responsive Settings -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="icon"></div>
+    </div>
+        <!-- Main Header -->
+       <header class="main-header header-style-one">
+       
+        <!-- Header Upper -->
+        <div class="header-upper">
+          <div class="auto-container">
+            <div class="inner-container clearfix">
+              <!--Logo-->
+              <div class="logo-box">
+                <div class="logo">
+                  <a
+                    href="{% url 'jobs:index' %}"
+                    title="Ashor Iraqi Foundation for Relief and Development"
+                    >
+                    <img
+                      src="{% static 'careers/images/logo.png' %}" height="10px"
+                      alt="Ashor Iraqi Foundation for Relief and Development" 
+                  />
+                </a>
+                </div>
+              </div>
+
+              <!--Nav Box-->
+              <div class="nav-outer clearfix">
+                <!--Mobile Navigation Toggler-->
+                <div class="mobile-nav-toggler">
+                  <span class="icon flaticon-menu-1"></span>
+                </div>
+
+                <!-- Main Menu -->
+                <nav class="main-menu navbar-expand-md navbar-light">
+                            <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                <ul class="navigation clearfix">
+                                    <li class="current dropdown"><a href="{% url 'jobs:about' %}">{% trans ABOUT AIFRD %}</a>
+                                        <ul>
+                                          <li><a href="{% url 'jobs:who_we_are' %}">{% trans "WHO WE ARE" %}</a></li>
+                                          <li><a href="{% url 'blogs:teams' %}">{% trans OUR TEAMS %}</a></li>
+                                            <li><a href="{% url 'jobs:vision_mission_value' %}">{% trans VISION & MISSION  %}</a></li>
+                                        </ul>
+                                    </li>
+                                   
+                                    <li><a href="{% url 'jobs:what_we_are_doing' %}">{% trans WHAT WE ARE DOING %}</a></li>
+                
+                                    <li class="dropdown"><a href="{% url 'blogs:stories_and_blogs' %}">{% trans STORIES & BLOG %}</a>
+                                      <ul>
+                                        <li><a href="{% url 'blogs:story' %}">{% trans  OUR STORIES %}</a></li>
+                                        <li><a href="{% url 'blogs:blogs' %}"> {% trans OUR BLOGS %}</a></li>
+                
+                                      </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="{% url 'jobs:get_involved' %}">{% trans GET INVOLVED %}</a>
+                                      <ul>
+                                        <li><a href="{% url 'careers:career_list' %}">{% trans CAREERS %}</a></li>
+                                        <li><a href="{% url 'jobs:volunteer' %}">{% trans JOIN US AS VOLUNTEER %}</a></li>
+                                      </ul>
+                                    </li>
+                                    <li><a href="{% url 'jobs:contact' %}">{% trans CONTACT US %}</a></li>
+                                    <li><a href="{% url 'jobs:what_we_are_doing' %}">{% trans العربية %}</a></li>
+                                    
+                                </ul>
+                                
+                            </div>
+                        </nav>
+                <!-- Main Menu End-->
+
+                <div class="donate-link">
+                  <a href="{% url 'jobs:donate' %}" class="theme-btn btn-style-one"
+                    ><span class="btn-title">{% trans Donate Now %}</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End Header Upper-->
+
+        <!-- Sticky Header  -->
+        <div class="sticky-header">
+          <div class="auto-container clearfix">
+            <!--Logo-->
+            <div class="logo pull-left">
+              <a href="{% url 'jobs:index' %}"  title=""
+                ><img src="{% static 'careers/images/logo.png' %}" alt="" title="" 
+                style="height:50px; width:60px;"
+              /></a>
+            </div>
+            <!--Right Col-->
+            <div class="pull-right">
+              <!-- Main Menu -->
+              <nav class="main-menu clearfix">
+                <!--Keep This Empty / Menu will come through Javascript-->
+              </nav>
+              <!-- Main Menu End-->
+            </div>
+          </div>
+        </div>
+        <!-- End Sticky Menu -->
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu" >
+         
+          
+          <div class="menu-backdrop"></div>
+          <div class="close-btn">
+            <span class="icon flaticon-cancel"></span>
+          </div>
+
+          <nav class="menu-box">
+            <div class="nav-logo">
+              <a href="{% url 'jobs:index' %}"  title=""
+              ><img src="{% static 'careers/images/logo.png' %}" alt="" title="" 
+              style="height:110px; width:110px;"
+            /></a>
+            </div>
+            <div class="menu-outer">
+              <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+            </div>
+            <!--Social Links-->
+            <div class="social-links">
+              <ul class="clearfix">
+                <li>
+                  <a href="#"><span class="fab fa-twitter"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="fab fa-facebook-square"></span></a>
+                </li>
+                
+                <li>
+                  <a href="#"><span class="fab fa-instagram"></span></a>
+                </li>
+               
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <!-- End Mobile Menu -->
+      </header>
+      <!-- End Main Header -->
+
+ {% block body%}
+  
+{% endblock body%}
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      <div class="auto-container">
+        <!--Widgets Section-->
+        <div class="widgets-section">
+          <div class="row clearfix">
+            <!--Column-->
+            <div class="column big-column col-lg-4 col-md-12 col-sm-12">
+              <div class="footer-widget logo-widget">
+                <div class="widget-content">
+                 
+                  <div class="text">
+                    <div class="text">
+                      {% trans       Ashor Iraqi Foundation for Relief and Development responds to the world’s worst humanitarian crises and helps people to survive and rebuild their lives.  %}
+                    </div>
+                  </div>
+                  <ul class="social-links clearfix">  {% for i in data %}
+                    <li><a href="{{i.facebook_link}}"><span class="fab fa-facebook-f"></span></a></li>
+                    <li><a href="{{i.twitter_link}}"><span class="fab fa-twitter"></span></a></li>
+                    <li><a href="{{i.instagram_link}}"><span class="fab fa-instagram"></span></a></li>
+                    {% endfor %} </ul >
+                </div>
+              </div>
+            </div>
+            <!--Column-->
+            <div class="big-column col-lg-8 col-md-12 col-sm-12">
+              <div class="row clearfix">
+                <!--Column-->
+                <div class="column col-lg-4 col-md-4 col-sm-12">
+                  <div class="footer-widget links-widget">
+                    <div class="widget-content">
+                      <h3>{% trans ABOUT AIFRD %}</h3>
+                      <ul>
+                        <li><a href="{% url 'jobs:who_we_are' %}">{% trans WHO WE ARE %}</a></li>
+                        <li><a href="{% url 'blogs:teams' %}">{% trans OUR TEAM %}</a></li>
+                        <li><a href="{% url 'jobs:vision_mission_value' %}">{% trans VISION & MISSION  %}</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!--Column-->
+                <div class="column col-lg-4 col-md-4 col-sm-12">
+                  <div class="footer-widget links-widget">
+                    <div class="footer-widget info-widget">
+                      <div class="widget-content">
+                        <h3>Contact Us</h3>
+                        <ul class="contact-info">
+                          <li><span class="fa fa-map-marker-alt"></span>{% trans  Salah Al-Den, Iraq %}</li>
+                        <li><span class="fa fa-phone-alt"></span> <a href="tel:+964 773 1476 198">+964 781 691 8934</a></li>
+                          <li>
+                            <a href="mailto:representative@aifrd.org"><span class="fa fa-envelope-open"></span>
+
+                              representative@aifrd.org</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!--Column-->
+                <div class="column col-lg-4 col-md-4 col-sm-12">
+                  <div class="footer-widget links-widget">
+                    <div class="widget-content">
+                      <h3>{% trans QUICK LINKS %}</h3>
+                      <ul>
+
+                        <li><a href="{% url 'jobs:what_we_are_doing' %}">{% trans WHAT WE ARE DOING %}</a></li>
+                        <li><a href="{% url 'blogs:stories_and_blogs' %}">{% trans STORIES & BLOG %}</a></li>
+                        <li><a href="{% url 'jobs:get_involved' %}">{% trans GET INVOLVED %}</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="auto-container">
+          <div class="inner">
+            <!--Copyright-->
+            <div class="copyright">
+              {% trans   Copyrights (c) 2021%}
+              <a href="#">{% trans Ashor Iraqi Foundation for Relief and Development. %}</a> {% trans All rights
+              reserved. %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!--End pagewrapper-->
+
+  <!--Scroll to top-->
+  <div class="scroll-to-top scroll-to-target" data-target="html">
+    <span class="flaticon-up-arrow"></span>
+  </div>
+  <script src="{% static 'careers/js/jquery.js' %}"></script>
+  <script src="{% static 'careers/js/popper.min.js' %}"></script>
+  <script src="{% static 'careers/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'careers/js/jquery-ui.js' %}"></script>
+  <script src="{% static 'careers/js/jquery.fancybox.js' %}"></script>
+  <script src="{% static 'careers/js/owl.js' %}"></script>
+  <script src="{% static 'careers/js/appear.js' %}"></script>
+  <script src="{% static 'careers/js/wow.js' %}"></script>
+
+  <script src="{% static 'careers/js/scrollbar.js' %}"></script>
+  <script src="{% static 'careers/js/validate.js' %}"></script>
+  <script src="{% static 'careers/js/paroller.js' %}"></script>
+  <script src="{% static 'careers/js/custom-script.js' %}"></script>
+</body>
+
+</html>

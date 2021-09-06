@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block body %}
+      <!-- Page Banner Section -->
+      <section class="page-banner">
+        {% for i in data %}
+        <div class="image-layer" style="background-image: url('{{i.image_bg}}')"></div>
+      
+        {% endfor %}
+
+      
+        <div class="auto-container">
+          <h3> VISSION & MISSION</h3>
+        </div>
+  
+    <div class="breadcrumb-box">
+      <div class="auto-container">
+        <ul class="bread-crumb clearfix">
+          <li><a href="{% url 'jobs:index' %}" style="font-size: 12px">HOME</a></li>
+  
+          <li class="active"><a href="{% url 'blogs:teams' %}"></a> ABOUT AIFRD</li>
+        </ul>
+      </div>
+    </div>
+      </section>
+      <!--End Banner Section -->
+    <!--Causes Section-->
+    <section class="career-section-two alternate-two" style="padding-bottom:40px;padding-top:40px">
+  
+        <div class="auto-container">
+          <div class="lower-box story-details">
+            <h1  style="font-size: 25px;padding-bottom: 30px;padding-top: 30px;">
+                Vision </h1>
+                                <div class="info-box clearfix">
+                                    {% for i in data %}
+                                 
+                                </div>
+                              
+                            </div>
+                            <p>{{i.vission_text}}</p> 
+        
+        </div>   {% endfor %}
+        <div class="auto-container">
+            <div class="lower-box story-details">
+              <h1  style="font-size: 25px;padding-bottom: 30px;padding-top: 30px;">
+                  Mission </h1>
+                                  <div class="info-box clearfix">
+                                      {% for i in data %}
+                                   
+                                  </div>
+                                
+                              </div>
+                              <p>{{i.Vission_Mission_Value_desc1}}</p>
+
+                              <p>{{i.Vission_Mission_Value_desc2}}</p> 
+                              <p>{{i.mission_text}}</p> 
+          
+          </div>   {% endfor %}
+    </section>
+  
+    {% endblock body %} 
+
+
+
+
+ 

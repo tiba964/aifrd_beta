@@ -1,0 +1,16 @@
+<html>
+    {% load static %}
+<body>
+    <h1>contacts</h1>
+    <ul>
+            {% for d in data %}
+                <li>id: {{ d.id }}</li>  
+                <li>full_name: {{ d.full_name }}</li>  
+                <li>email: {{ d.email }}</li>
+                <li>phone: {{ d.phone }}</li>
+                <li>subject: {{ d.subject }}</li>
+                <li>message: {{ d.message }}</li>
+                <br>
+            {% endfor %}
+    </ul>
+</body></html>

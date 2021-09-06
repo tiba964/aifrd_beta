@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block body %}
+  <!-- Page Banner Section -->
+<section class="page-banner">
+  {% for i in bg_image_teams %}
+    <div class="image-layer" style="background-image: url('{{i.bg_image_temas.url}}')"></div>
+    {% endfor %}
+  
+    <div class="auto-container">
+          <h1>OUR TEAMS</h1>
+        </div>
+  
+    <div class="breadcrumb-box">
+      <div class="auto-container">
+        <ul class="bread-crumb clearfix">
+          <li><a href="{% url 'jobs:index' %}" style="font-size: 12px">HOME</a></li>
+  
+          <li class="active"><a href="{% url 'blogs:teams' %}"></a> ABOUT AIFRD</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!--End Banner Section -->
+  
+ <!--Causes Section-->
+ <section class="causes-section alternate-two" style="padding-bottom:40px;padding-top:80px">
+   
+     <div class="auto-container">
+      <div class="row clearfix">
+           {% for i in data %}
+             <div class="cause-block alternate col-lg-4 col-md-6 col-sm-12">
+                 <div class="inner-box wow fadeInUp" data-wow-delay="0ms">
+                     <div class="image-box">
+                         <figure class="image"><a href="">  <img src="{{i.teams_image}}"  width="360px" height="250px"alt=""></a></figure>
+                         
+                     </div>
+                     <div class="lower-content" style="padding-top:25px; padding-bottom:10px">
+                         <h3><a>{{i.teams_name}}</a></h3>
+                         <div class="text">{{i.teams_desc}}</div>
+                         
+                     </div>
+                 </div>
+             </div>
+             
+             {% endfor %}  
+         </div>
+
+         
+     </div>
+ </section>
+
+
+
+{% endblock body %}

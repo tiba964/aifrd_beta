@@ -1,0 +1,21 @@
+<html>
+    {% load static %}
+<body>
+    <h1>applicants</h1>
+    <ul>
+            {% for d in data %}
+                <li>id: {{ d.id }}</li>  
+                <li>full_name: {{ d.full_name }}</li>  
+                <li>email: {{ d.email }}</li>
+                <li>phone: {{ d.phone }}</li>
+                <li>region: {{ d.region }}</li>
+                <li>gender: {{ d.gender }}</li>
+                <li>english: {{ d.english }}</li>
+                <li>arabic: {{ d.arabic }}</li>
+                <li>kurdish: {{ d.kurdish }}</li>
+                <li>cover_letter: {{ d.cover_letter }}</li>
+                <li>upload_cv: <img src={{d.upload_cv}}>{{d.upload_cv}}</li>
+                <br>
+            {% endfor %}
+    </ul>
+</body></html>

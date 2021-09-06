@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block body %}
+      <section class="page-banner">
+        {% for i in bg_image_teams %}
+        <div class="image-layer" style="background-image: url('{{i.bg_image_temas.url}}')"></div>
+        {% endfor %}
+
+        <div class="breadcrumb-box">
+          <div class="auto-container">
+            <ul class="bread-crumb clearfix">
+              <li><a href="{% url 'jobs:index' %}">HOME</a></li>
+              <li class="active">STORIES & BLOGS</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!--End Banner Section -->
+    
+      <section class="causes-section alternate">
+        <div class="auto-container">
+      
+         
+                      
+          <div class="row clearfix">
+          
+              <!--Cause Block-->
+              <div class="cause-block alternate col-lg-4 col-md-6 col-sm-12">
+                  <div class="inner-box wow fadeInUp" data-wow-delay="0ms">
+                      <div class="image-box">
+                          <figure class="image"><a href="{% url 'blogs:story' %}">  {% for i in data %}
+                            <img src="{{i.image_bg_stories}}"  alt="">
+                            {% endfor %}   </a></figure>
+                          <div class="progress-box">
+                              <div class="bar">
+                                  <div class="bar-inner count-bar" data-percent="100%"></div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="lower-content">
+                          <h3><a href="{% url 'blogs:story' %}">OUR STORIES</a></h3>
+                          {% for i in data %}
+                          <div class="text">{{i.text_bg_stories}}</div>
+                          {% endfor %}                          </div>
+                  </div>
+              </div>
+              
+              <!--Cause Block-->
+              <div class="cause-block alternate col-lg-4 col-md-6 col-sm-12">
+                  <div class="inner-box wow fadeInUp" data-wow-delay="0ms">
+                      <div class="image-box">
+                          <figure class="image"><a href="cause-single.html">  {% for i in data %}
+                            <img src="{{i.image_bg_blogs}}"  height="250px" alt="">
+                           {% endfor %}</a></figure>
+                          <div class="progress-box">
+                              <div class="bar">
+                                  <div class="bar-inner count-bar" data-percent="100%"></div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="lower-content">
+                          <h3><a href="{% url 'blogs:blogs' %}"  height="250px"  >OUR BLOGS</a></h3>
+                          {% for i in data %}
+                          <div class="text"> {{i.text_bg_blogs}} </div>
+                          {% endfor %} </div>                          </div>
+                  </div>
+              </div>
+              
+              
+          </div>
+          
+      </div>
+  </section>
+
+   
+    {% endblock body %}

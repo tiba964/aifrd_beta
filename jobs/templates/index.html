@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% block body %}
+<!-- Banner Section -->
+<section class="banner-section">
+
+  <div class="banner-carousel kausid-carousel owl-theme owl-carousel"
+    data-options='{"loop": true, "margin": 0, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 6000, "smartSpeed": 300, "responsive":{ "0" :{ "items": "1" }, "768" :{ "items" : "1" } , "1000":{ "items" : "1" }}}'>
+    {% for slider in slider_show %}
+    <!-- Slide Item -->
+    <div class="slide-item { % if forloop.counter0 == 0 %} active {% endif % }">
+      <div class="image-layer" style="background-image: url('{{slider.slide_image_index.url}}')"></div>
+
+      <div class="auto-container">
+        <div class="content-box">
+          <div class="content">
+            <div class="inner">
+              <div class="sub-title">{{slider.slide_subtitle_index}}</div>
+              <h2>{{slider.slide_title_index}}</h2>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <!-- Slide Item -->
+
+  </div>
+</section>
+<!--End Banner Section -->
+<!--About Section Four-->
+<section class="about-section-four">
+
+  <div class="auto-container">
+    <div class="row clearfix">
+      <!--Text Column-->
+      <div class="text-column col-lg-6 col-md-12 col-sm-12">
+        <div class="inner">
+          <div class="sec-title">
+            <div class="sub-title">
+              <h3 style="font-size:16px"> Since 2015<h3>
+            </div>
+            <h2 style="font-size:25px">Ashor Iraqi Foundation for Relief and Development</h2>
+          </div> {% for i in data %}
+          <div class="text" style="padding-top: 10px;">{{i.text_about_index}}</div> {% endfor %}
+          <div class="link-box"><a href="{% url 'jobs:about' %}" class="default-link"> READ MORE</a></div>
+
+        </div>
+      </div>
+      <!--Image Column-->
+      <div class="image-column col-lg-6 col-md-12 col-sm-12">
+        <div class="inner">
+          <div class="image-box">
+            <figure class="image">
+              {% for i in data %}
+              <img src="{{i.image_about_index}}" style="height:358px; width:518px;" alt="">
+              {% endfor %}
+            </figure>
+            <div class="caption-box wow fadeInUp" data-wow-delay="0ms">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="what-we-do causes-section alternate-two news-section">
+
+  <div class="auto-container">
+    <div class="" style="padding-bottom:20px;padding-top:40px;text-align:center">
+      <h2>What We Are Doing</h2>
+    </div>
+    {% for i in data %}
+    <p style="text-align:center;padding-top:20px;padding-bottom:50px;"> {{i.whatDoDetail_text}}</p>
+    {% endfor %}
+    <div class="row clearfix">
+
+      {% for whatWeDo in whatWeDoss %}
+      {% if forloop.counter < 4 %} <!--Service Block-->
+        <div class="service-block col-lg-4 col-md-6 col-sm-12 wow fadeInLeft" data-wow-delay="0ms">
+
+          <div class="inner-box">
+
+            <div class="icon"><span class='{{ whatWeDo.whatDoDetail_icon_name }}'></span></div>
+
+            <h3><a href="{% url 'jobs:what_we_are_doing_details' whatWeDo.id %}">{{whatWeDo.whatDoDetail_name}}</a></h3>
+            <div class="text">{{whatWeDo.whatDoDetail_desc1}}</div>
+            <div class="link-box"><a href="{% url 'jobs:what_we_are_doing_details' whatWeDo.id %}"
+                class="theme-btn">Explore</a></div>
+          </div>
+
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div class="load-more" style="padding-bottom:30px"><a href="{% url 'jobs:what_we_are_doing' %}"
+        class="theme-btn load-more-btn">SEE MORE</a></div>
+
+
+
+
+
+
+  </div>
+  <div>
+
+
+
+
+
+
+
+</section>
+<section class="call-to-action">
+  <div class="image-layer" style="background-image: url('images/background/bg-pattern-1.png')"></div>
+
+  <div class="auto-container volunteer">
+    <div class="row clearfix">
+      <div class="title-column col-xl-9 col-lg-12 col-md-12 col-sm-12">
+        <h2 style="FONT-SIZE:35px">
+          Become a vital part of Ashor Iraqi Foundation for Relief and Development & make a real difference to lives
+          of many!
+        </h2>
+      </div>
+      <div class="link-column col-xl-3 col-lg-12 col-md-12 col-sm-12">
+        <div class="link-box">
+          <a href="{% url 'jobs:volunteer' %}" class="theme-btn btn-style-two"><span class="btn-title">JOIN US AS
+              VOLUNTEERS</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="stories-section" style="padding-top:80px">
+
+  <div class="auto-container">
+    <div class="row clearfix">
+
+      <div class="image-column col-lg-6 col-md-12 col-sm-12">
+        <div class="inner">
+          <div class="image-box">
+            <figure class="image">
+              {% for i in data %}
+              <img src="{{i.image_story_index}}" style="height:358px; width:518px;" alt="">
+              {% endfor %}
+            </figure>
+            <div class="caption-box wow fadeInUp" data-wow-delay="0ms">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Text Column-->
+      <div class="text-column col-lg-6 col-md-12 col-sm-12">
+        <div class="inner">
+          <div class="sec-title"></div>
+          <h2 style="font-size:36px">OUR STORIS</h2>
+        </div> {% for i in data %}
+        <div class="text" style="padding-top:20px">{{i.text_story_index}}</div> {% endfor %}
+        <div class="link-box"> <a href="{% url 'blogs:story' %}" class="default-link" style="padding-top:20px;">VIEW ALL
+            STORIES</a></div>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+</section>
+<section class="stories-section load-more-section" data-load-number="2">
+  <div class="auto-container">
+    <div class="row clearfix " style="padding-top:80px">
+
+      {% for story in stories %}
+      {% if forloop.counter < 4 %} <div class=" col-lg-4 col-md-6 col-sm-12">
+
+        <aside class="stories">
+          <!-- Event Widget -->
+          <div class="stories-widget story-widget">
+            <div class="widget-inner">
+              <div class="widget-content">
+                <figure class="image">
+
+
+                  <img src="{{story.story_image_one.url}}" style="height:176px; width:270px;" alt="" title="" />
+                </figure>
+                <div class="lower-box story-details">
+                  <div class="info-box clearfix">
+                    <div class="cause-info">
+                      <ul class="clearfix">
+                        <li><span class="far flaticon-calendar"></span> <span>{{story.story_date|date:'d M o'}}</span>
+                        </li>
+                        <li><span class="fa fa-map-marker-alt"></span> {{story.story_location}}</li>
+                      </ul>
+                    </div>
+
+
+                  </div>
+
+                </div>
+                <h4>
+                  <a href="{% url 'blogs:stories_detail' story.id %}">{{story.story_name}}</a>
+                </h4>
+                <p> {{ story.story_desc1 }}
+                </p>
+                <ul class="info">
+               
+                <li>
+                 <div class="link-box" style="padding-left:4px;font-size:12px">
+                   <a href="{% url 'blogs:stories_detail' story.id %}" class="default-link"> READ MORE</a></div>
+</li>
+               
+              </ul>
+              </div>
+            </div>
+          </div>
+        </aside>
+    </div>
+
+    {% endif %} {% endfor %}
+  </div>
+  </div>
+</section>
+
+
+{% endblock body %}

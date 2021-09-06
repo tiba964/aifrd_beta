@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block body %}
+       <!-- Page Banner Section -->
+   <section class="page-banner">
+    {% for i in storyBackgroundImage %}
+    <div class="image-layer" style="background-image: url('{{i.bg_image_story.url}}')"></div>
+  
+    {% endfor %}
+
+     <!-- <div class="auto-container">
+       <h1>STORIES</h1>
+     </div> -->
+
+     <div class="breadcrumb-box">
+       <div class="auto-container">
+         <ul class="bread-crumb clearfix">
+           <li><a href="{% url 'jobs:index' %}">HOME</a></li>
+           <li class="active">STORIES</li>
+         </ul>
+       </div>
+     </div>
+   </section>
+   <!--End Banner Section -->
+
+
+   <!--stories Section-->
+   <!-- <h3  style="color:#426E94;text-align:center; padding-top:70px;  background-color:white;">{{message}}</h3> -->
+   <section class="stories-section load-more-section" data-load-number="2">
+     <div class="auto-container">
+       <div class="row clearfix " style="padding-top:80px">
+        
+            {% for story in stories %}
+                   <div class=" col-lg-4 col-md-6 col-sm-12">
+
+         <aside class="stories">
+           <!-- Event Widget -->
+           <div class="stories-widget story-widget">
+             <div class="widget-inner">
+               <div class="widget-content">
+                 <figure class="image">
+                   <img
+                    src="{{story.story_image_one.url}}" style="height:200px; width:500px;"
+                     alt=""
+                     title=""
+                   />
+                 </figure>
+                 <div class="lower-box story-details">
+                  <div class="bottom-box clearfix">
+                    <div class="post-meta">
+                            <div class="info-box clearfix">
+                                <div class="cause-info">
+                                    <ul class="clearfix">
+                                      <li><span class="far flaticon-calendar"></span> <span>{{story.story_date|date:'d M o'}}</span> </li>
+                                      <li><span class="fa fa-map-marker-alt"></span> {{story.story_location}}</li>
+                                   </ul>
+                                </div>
+                               
+                              </div>             
+                            </div>   </div>
+                        
+                </div>
+           
+                         <h4 style="font-size:16px">
+                   <a href="{% url 'blogs:stories_detail' story.id %}"
+                     >{{story.story_name}}</a
+                   >
+
+                   <h4>
+ <p style="font-size:14px">  {{ story.story_desc1 }}
+                                 </p>
+
+                 <ul class="info">
+                  
+                   <li>
+                    <div class="link-box" style="padding-left:4px;font-size:12px">
+                      <a href="{% url 'blogs:stories_detail' story.id %}" class="default-link"> READ MORE</a></div>
+</li>
+                  
+                 </ul>
+               </div>
+             </div>
+           </div>
+         </aside>
+         </div>
+
+                {% endfor %}
+       </div>
+     </div>
+   </section>
+
+{% endblock body %}

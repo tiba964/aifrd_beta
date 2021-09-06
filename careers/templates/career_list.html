@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block body %}
+
+      <!-- Page Banner Section -->
+      <section class="page-banner">
+        {% for i in data %}
+        <div class="image-layer" style="background-image: url('{{i.image_bg_career_list}}')"></div>
+      
+        {% endfor %}
+    
+        <div class="auto-container">
+          <h3>
+           CAREERS
+          </h3>
+        </div>
+
+        <div class="breadcrumb-box">
+          <div class="auto-container">
+            <ul class="bread-crumb clearfix">
+              <li><a href="{% url 'jobs:index' %}" style="font-size: 12px">HOME</a></li>
+              <li>
+                <a href="{% url 'jobs:get_involved' %}" style="font-size: 12px"
+                  >GET INVOLVED</a
+                >
+              </li>
+              <!-- <li class="active" style="font-size: 12px">CAREERS</li> -->
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!--End Banner Section -->
+
+      <!-- News Section Two-->
+     
+
+
+
+
+      <section class="career-section-two">
+        <div class="auto-container">
+          <h3  style="color:#426E94;text-align:center; padding-top:0px; padding-bottom: 50px; background-color:white;">{{message}}</h3>
+
+         <div class="lower-box story-details">
+                                <h2 style="font-size:20px; padding-top:0px;"> latest careers</h2>
+                                <div class="info-box clearfix" style="    margin-bottom: 15px;">
+                               
+                                        
+                                </div>
+                              
+                            </div>
+          <div class="row clearfix">
+              <div class="inner">
+            
+                  
+                    
+                  <div class="career-post ">
+                    <!-- <div class="post-thumb">{% for career in careers %}
+ <a href="{% url 'careers:career_detail' career.id %}">                     
+      <figure class="thumb">
+  <img src="{{career.image_career_details.url}}" alt="" style="width:90px;height: 85px;"/>
+                        </figure>
+                      </a>
+                    </div> -->
+                    <div  class="careerDes">
+                    <h4 class="name" style="font-size:20px; padding-bottom:10px;">{{career}}</h4>
+                 
+                    <p> {{career.description}}</p> 
+                 
+                    <div class="post-info">
+                      {{career.location}} , {{career.governorate}} &ensp;|&ensp; {{career.posted|date:'d M o'}}  &ensp;
+                          <a href="{% url 'careers:career_detail' career.id %}" class="reply-btn" style="font-weight: bold;">Read more</a>
+                    </div>
+                    {% endfor %}
+                  </div>
+                
+                  
+                 
+             
+              </div>
+            </div>
+            <!--Right Column-->
+          </div>
+        </div>
+      </section>
+      <!-- Main Footer -->
+      {% endblock body %}

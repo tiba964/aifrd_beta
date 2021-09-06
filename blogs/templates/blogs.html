@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block body %}
+   <!-- End Main Header -->
+
+   <!-- Page Banner Section -->
+   <section class="page-banner">
+    {% for i in data %}
+    <div class="image-layer" style="background-image: url('{{i.bg_image_blog}}')"></div>
+  
+    {% endfor %}
+  <!-- <div class="auto-container">
+       <h1>BLOGS</h1>
+     </div> -->
+
+     <div class="breadcrumb-box">
+       <div class="auto-container">
+         <ul class="bread-crumb clearfix">
+           <li><a href="{% url 'jobs:index' %}">HOME</a></li>
+           <li class="active"> BLOGS</li>
+         </ul>
+       </div>
+     </div>
+   </section>
+   <!--End Banner Section -->
+   <div class="blog-section  " style="padding-top:30px">
+    <div class="auto-container">
+        <div class="row clearfix " style="padding-top: 50px;">
+          {% for i in data %}
+            <!--Content Side / Blog Detail-->
+            <div class="content-side col-lg-4 col-md-6 col-sm-12">
+                <div class="blog-posts">
+                    <!--News Block Two-->
+                    <div class="blog-block-two">
+                        <div class="inner-box">
+                          <div class="image-box">
+                            <figure class="image"> <img src="{{i.blogs_image}}"  width="350px" height="300px"alt=""></figure>
+                            
+                        </div>
+                            
+                          
+                            <div class="lower-box">
+                              <h3 style="font-size:18px; padding-bottom:10px;padding-top:10px;">{{i.blogs_title}}</h3>
+                              <div class="text"> {{i.blogs_desc}}</div>
+                              <div class="bottom-box clearfix">
+                                    <div class="post-meta">
+                                        <div class="info-box clearfix">
+                                            <div class="cause-info">
+                                                <ul class="clearfix">
+                                                  <li><span class="far flaticon-calendar"></span> {{i.blogs_date}}</li>
+                                                  <li><span class="fa fa-map-marker-alt"></span> {{i.blogs_location}}</li>
+                                               </ul>
+                                            </div>
+                                           
+                                                
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                  
+                 
+            </div>
+            <!--End Content Side-->
+
+         
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock body %}
+
+

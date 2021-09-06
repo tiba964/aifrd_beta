@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% block body %}
+<!-- End Main Header -->
+
+<!-- Page Banner Section -->
+<section class="page-banner">
+
+  {% for i in data %}
+  <div class="image-layer" style="background-image: url('{{i.image_middle_about}}')"></div>
+
+  {% endfor %}
+  <div class="auto-container">
+        <h2>AIFRD Non-Governmental Organizations</h2>
+      </div>
+
+  <div class="breadcrumb-box">
+    <div class="auto-container">
+      <ul class="bread-crumb clearfix">
+        <li><a href="{% url 'jobs:index' %}" style="font-size: 12px">HOME</a></li>
+
+        <li class="active">ABOUT AIFRD</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!--End Banner Section -->
+
+<!--About Section-->
+<section class="about-section-three">
+  <div class="auto-container">
+    <!--Text Column-->
+    <!-- <div class="inner">
+              <div class="lower-box story-details">
+                <h2 >About AIFRD</h2>
+                <div class="info-box clearfix">
+               
+                        
+                </div>
+              
+            </div> -->
+           
+    {% for i in data %}
+    <div class="lower-text">
+      <div class="post-content">
+
+        {{i.text_about}}
+      </div>
+
+      <div class="lower-text" style="padding-top: 20px;">
+        {{i.text_about1}}
+      </div>
+      {% endfor %}
+    </div>
+
+
+
+
+ 
+
+
+  <div class="row clearfix">
+    <div class="sidebar-side col-lg-7 col-md-12 col-sm-12">
+      <aside class="sidebar">
+
+
+        <!-- Category Widget -->
+        <div class="sidebar-widget category-widget">
+          <div class="widget-inner">
+            <h3 style="font-size:20px">The goals of AIFRD</h3>
+            <div class="widget-content">
+              <ul>
+                <li>
+                  <a class="clearfix">The Foundation works on community
+                    awareness projects for the purpose of
+                    advancing the community and combating
+                    extremist ideas.</a>
+                </li>
+                <li class="active">
+                  <a class="clearfix">The Foundation seeks to alleviate cases of
+                    persecution and injustice against aggrieved
+                    citizens and help them restore their rights.</a>
+                </li>
+                <li>
+                  <a class="clearfix">Contribute to achieving societal solidarity
+                    among all segments of society, especially
+                    minorities.</a>
+                </li>
+                <li>
+                  <a class="clearfix"> Work to secure the emergency response to
+                    the displaced and the displaced at any time
+                    by implementing rapid interventions in the
+                    field.</a>
+                </li>
+                <li>
+                  <a class="clearfix"> Working to promote and build peaceful
+                    coexistence between different nationalities,
+                    religions and sects, reject violence and
+                    sectarianism, and spread peace.</a>
+                </li>
+                <li>
+                  <a class="clearfix">Spreading a culture of cooperation between
+                    society and the government to reach the
+                    highest goals of transparency.</a>
+                </li>
+                <li>
+                  <a class="clearfix"> Adopting renewable ideas and
+                    encouraging the youth group to follow them
+                    and work to achieve them and to achieve
+                    the vision of the institution.</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+      </aside>
+
+    </div>
+    <div class="image-column col-lg-5 col-md-12 col-sm-12" style="padding-top:55px" >
+      <figure class="image wow slideInRight" data-wow-delay="0ms">
+        {% for i in data %}
+        <img src="{{i.image_middle_about}}" width="100%" height="420px" alt="" />
+        {% endfor %}
+      </figure>
+    </div>
+  </div>
+
+
+
+  <!--Featured Blocks-->
+  <div class="featured-blocks">
+    <div class="row clearfix">
+      <!--Featured Block-->
+      <div class="featured-block col-lg-6 col-md-6 col-sm-12">
+        <div class="inner-box">
+          <div class="inner">
+            <div class="icon"><span class="flaticon-care"></span></div>
+            <h3>OUR VISION</h3>
+            <div class="text">
+              We aspire to a world in which the rights of children, as defined in the Convention on the Rights of the
+              Child, are always respected. A world in which children can thrive in safe environments and become agents
+              of change they wish to see in their lives.
+            </div>
+            <div class="link-box">
+              <a href="{% url 'jobs:vision_mission_value' %}" class="more-link">Read More
+                <span style="padding-top: 10px; padding-right: 10px" class="fa fa-arrow-right"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Featured Block-->
+      <div class="featured-block col-lg-6 col-md-6 col-sm-12">
+        <div class="inner-box">
+          <div class="inner">
+            <div class="icon">
+              <span class="flaticon-pigeon"></span>
+            </div>
+            <h3>OUR MISSION</h3>
+            <div class="text">
+              Ashor Iraqi Foundation for Relief and Development, founded in 2014, is an independent, neutral and
+              impartial Iraqi organisation committed to bringing meaningful and lasting change to the lives of children
+              and youth, especially to those most exposed to risks. We strive to improve their well-being .
+            </div>
+            <div class="link-box">
+              <a href="{% url 'jobs:vision_mission_value' %}" class="more-link">Read More
+                <span style="padding-top: 10px; padding-right: 10px" class="fa fa-arrow-right"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+</section>
+
+{% endblock body %}

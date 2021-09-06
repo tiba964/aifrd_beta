@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block body %}
+ 
+   <!-- Page Banner Section -->
+   <section class="page-banner">
+    <div class="image-layer" style="background-image: url('{{story.story_image_one.url}}')"></div>
+
+ <div class="auto-container">
+       <h1>{{  story.story_name  }}</h1>
+     </div>
+
+    
+     <div class="breadcrumb-box">
+       <div class="auto-container">
+          <ul class="bread-crumb clearfix">
+           <li><a href="{% url 'jobs:index' %}">HOME</a></li>
+           <li class="active"><a href="{% url 'blogs:story' %}">STORIES</a></li>
+         </ul>
+       </div>
+     </div>
+   </section>
+   <!--End Banner Section -->
+ <!--Causes Section-->
+ <section class="story-section alternate-two" style="padding-bottom:40px;padding-top:40px">
+   
+     <div class="auto-container">
+      <div class="post-content">
+                                   <div class="lower-box story-details">
+                             <h4 style="padding-bottom:20px;" style="font-size:16px">{{  story.story_name  }}</h4>
+                             <div class="info-box clearfix">
+                                 <div class="cause-info">
+                                     <ul class="clearfix">
+                                         <li><span class="far flaticon-calendar"></span> {{ story.story_date|date:'d M o' }}  </li>
+                                         <li><span class="fa fa-map-marker-alt"></span> {{story.story_location}}</li>
+                                     </ul>
+                                 </div>
+                                
+                                     
+                             </div>
+                           
+                         </div>
+                              
+            
+                               
+                                 <p>{{ story.story_desc2 }}</p>
+                                 <p>{{ story.story_desc3 }}</p>
+                                 <div class="row clearfix">
+                                    
+                                 </div>
+                                 <p class="big-text">{{ story.story_desc4 }}</p>
+                                
+                                  </div>
+                     
+         <!-- <div class="row clearfix">
+         
+             <div class="cause-block alternate col-lg-4 col-md-6 col-sm-12">
+                 <div class="inner-box wow fadeInUp" data-wow-delay="0ms">
+                     <div class="image-box">
+                         <figure class="image"><img src="{{ story.story_image_one.url }} " height="300px" alt=""></figure>
+                         
+                     </div>
+                    
+                 </div>
+             </div>
+                <div class="cause-block alternate col-lg-4 col-md-6 col-sm-12">
+                 <div class="inner-box wow fadeInUp" data-wow-delay="0ms">
+                     <div class="image-box">
+                         <figure class="image"><img src="{{ story.story_image_two.url }}"  height="300px" alt=""></figure>
+                         
+                     </div>
+                    
+                 </div>
+             </div>
+                <div class="cause-block alternate col-lg-4 col-md-6 col-sm-12">
+                 <div class="inner-box wow fadeInUp" data-wow-delay="0ms">
+                     <div class="image-box">
+                         <figure class="image"><img src="{{ story.story_image_three.url }}"   height="300px" alt=""></figure>
+                         
+                     </div>
+                    
+                 </div>
+             </div>
+             
+             
+         </div> -->
+         <p>{{ story.story_desc5 }}</p>
+         <p>{{ story.story_desc6 }}</p>
+         <p>{{ story.story_desc7 }}</p>                       
+
+     
+     </div>
+ </section>
+
+
+{% endblock body %}

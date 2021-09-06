@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block body %}
+
+       <!-- Page Banner Section -->
+       <section class="page-banner">
+       
+        <div class="image-layer" style="background-image: url('{{whatWeDo.whatDoDetail_image_gallery.url}}')"></div>
+      
+        <div class="auto-container">
+            <h3>{{ whatWeDo.whatDoDetail_name }}</h3>
+          </div>
+    
+      <div class="breadcrumb-box">
+        <div class="auto-container">
+          <ul class="bread-crumb clearfix">
+            <li><a href="{% url 'jobs:index' %}" style="font-size: 12px">HOME</a></li>
+    
+            <li ><a href="{% url 'jobs:what_we_are_doing' %}">WHAT WE ARE DOING</a> </li>
+          </ul>
+        </div>
+      </div>
+
+
+        
+      </section>
+      <!--End Banner Section -->
+
+    <!--Causes Section-->
+    <section class="causes-section alternate-two" style="padding-bottom:20px">
+        <div class="auto-container">
+         <div class="post-content">
+                                      <div class="lower-box story-details">
+                                <h2 style="font-size:20px;">{{ whatWeDo.whatDoDetail_name }}</h2>
+                                <div class="info-box clearfix">
+                               
+                                        
+                                </div>
+                              
+                            </div>
+                                 
+               
+                                    <p>{{whatWeDo.whatDoDetail_desc1}}</p>
+                                    <p>{{whatWeDo.whatDoDetail_desc2}}</p>
+                                    <p>{{whatWeDo.whatDoDetail_desc3}}</p>
+                                    <div class="row clearfix">
+                                       
+                                    </div>
+                                
+                                   
+                                     </div>
+                        
+         
+            
+            <p>{{whatWeDo.whatDoDetail_desc5}}</p>
+
+            <p>{{whatWeDo.whatDoDetail_desc6}}</p>
+                                    
+  <div class="news-block-three">
+                            <div class="inner-box">
+                                <div class="text">                                    {{whatWeDo.whatDoDetail_desc4}}
+                                </div>
+                            </div>
+                        </div>
+        
+        </div>
+    </section>
+   
+
+<!-- Insta Gallery Section -->
+    <section class="insta-gallery">
+        <div class="insta-gallery-carousel kausid-carousel owl-theme owl-carousel" data-options='{"loop": false, "margin": 0, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 5000, "smartSpeed": 500, "responsive":{ "0" :{ "items": "1" },"600" :{ "items": "2" }, "768" :{ "items" : "3" }, "1024":{ "items" : "4" }, "1366":{ "items" : "4" }, "1500":{ "items" : "5" }, "1920":{ "items" : "6" }}}'>
+            <!-- Gallery Item -->
+            {% for i in data %}
+            <div class="gallery-item-two">
+                <div class="image-box">
+                    <figure class="image"><img src="{{i.whatWeDo.whatDoDetail_image_gallery}}" data-src="images/gallery/8.jpg" alt=""></figure>
+                    <div class="overlay-box"><a href="images/gallery/8.jpg" class="lightbox-image" data-fancybox="gallery-two"><span class="icon flaticon-instagram"></span></a></div>
+                </div>
+            </div>
+            <!-- Gallery Item -->
+            {% endfor %}
+        </div>
+    </section>
+    <!--End Gallery Section -->
+   
+
+
+{% endblock body %}

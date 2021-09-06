@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% block body %}
+     <!-- Page Banner Section -->
+     <section class="page-banner">
+      {% for i in data %}
+      <div class="image-layer" style="background-image: url('{{i.image_bg_volunteer}}')"></div>
+    
+      {% endfor %}
+
+      <div class="auto-container">
+        <h3>Become a vital part of Ashor Iraqi Foundation for Relief and Development & make a real difference to lives of many!</h3>
+        
+      </div>
+
+      <div class="breadcrumb-box">
+        <div class="auto-container">
+          <ul class="bread-crumb clearfix">
+            <li><a href="{% url 'jobs:index' %}" style="font-size: 12px">HOME</a></li>
+            <li><a href="{% url 'jobs:get_involved' %}" style="font-size:12px">GET INVOLVED</a></li>
+            <!-- <li class="active" style="font-size:12px">VOLUNTEER</li> -->
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!--End Banner Section -->
+  <section class="contact-section contact-page" style="padding-left: 20px">
+      <div class="auto-container">
+        <div class="row clearfix justify-content-md-center">
+          <!--Form Column-->
+            <div class="form-column">
+              <div class="default-form donate-form">
+                <form action="{% url 'jobs:applicantsList' %}" method="GET" enctype="multipart/form-data">
+                  <h3 style="padding-bottom: 40px">JOIN US AS VOLUNTEERS</h3>
+                  <div class="row clearfix">
+                    <div class="form-group col-md-6 col-sm-12">
+                      <div class="field-label">Fullname</div>
+                      <input type="text" name="full_name" value="" placeholder="" required />
+                    </div>
+                    <div class="form-group col-md-6 col-sm-12">
+                      <div class="field-label">Gender</div>
+                      <select class="custom-select-box" name="gender">
+                        <option>Male</option>
+                        <option>Female</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6 col-sm-12">
+                      <div class="field-label">Email</div>
+                      <input type="email" name="email" value="" placeholder="" required />
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-12">
+                      <div class="field-label">Phone Number</div>
+                      <input type="number" name="phone" value="" placeholder="" />
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-12">
+                      <div class="field-label">Goverment</div>
+                      <select class="custom-select-box" name="region">
+                        <option>Baghdad</option>
+                        <option>Mousl</option>
+                        <option>Erbil</option>
+                        <option>Anbar</option>
+                        <option>Babylon</option>
+                        <option>Basra</option>
+                        <option>Dhi Qar</option>
+                        <option>Diyala</option>
+                        <option>Dohuk</option>
+                        <option>Karbala</option>
+                        <option>KirKuk</option>
+                        <option>Maysan</option>
+                        <option>Najaf</option>
+                        <option>Qaisiyah</option>
+                        <option>Salahaddin</option>
+                        <option>Sulaymaniyah</option>
+                        <option>Wasit</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-12">
+                      <div class="field-label">Address</div>
+                      <input type="text" name="address" value="" placeholder="" required />
+                    </div>
+                    <div class="form-group form-group col-md-6 col-sm-12">
+                      <div class="field-label">Upload your CV:</div>
+                      <input type="file" name="upload_cv" style="color: blue" />
+                    </div>
+                    <div class="form-group form-group col-md-6 col-sm-12">
+                      <div class="field-label">Select Language</div>
+                      <table>
+                        <tr>
+                          <td style="
+                                margin-left: 50px;
+                                padding-right: 40px;
+                                padding-top: 25px;
+                              ">
+                            <label class="
+                                  mdl-checkbox
+                                  mdl-js-checkbox
+                                  mdl-js-ripple-effect
+                                " for="checkbox1">
+                              <input type="checkbox" id="checkbox1" class="mdl-checkbox__input" name="english" />
+                              <span class="mdl-checkbox__label">English</span>
+                            </label>
+                          </td>
+
+                          <td style="
+                                margin-left: 50px;
+                                padding-right: 40px;
+                                padding-top: 25px;
+                              ">
+                            <label class="
+                                  mdl-checkbox
+                                  mdl-js-checkbox
+                                  mdl-js-ripple-effect
+                                " for="checkbox2">
+                              <input type="checkbox" id="checkbox2" class="mdl-checkbox__input" name="arabic" />
+                              <span class="mdl-checkbox__label">Arabic</span>
+                            </label>
+                          </td>
+
+                          <td style="
+                                margin-left: 50px;
+                                padding-right: 40px;
+                                padding-top: 25px;
+                              ">
+                            <label class="
+                                  mdl-checkbox
+                                  mdl-js-checkbox
+                                  mdl-js-ripple-effect
+                                " for="checkbox3">
+                              <input type="checkbox" id="checkbox3" class="mdl-checkbox__input" name="kurdish" />
+                              <span class="mdl-checkbox__label">Kurdish</span>
+                            </label>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+
+                    <div class="form-group form-group col-md-12 col-sm-12">
+                      <div class="field-label">Cover Letter</div>
+                      <textarea name="cover_letter" placeholder=""></textarea>
+                    </div>
+                  </div>
+                  <div class="btn-box" style="padding-top: 30px">
+                    <button type="submit" class="theme-btn btn-style-one">
+                      <span class="btn-title">Submit</span>
+                    </button>
+                  </div>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endblock body %} 
