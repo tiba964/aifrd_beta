@@ -46,8 +46,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -72,6 +73,21 @@ TEMPLATES = [
         },
     },
 ]
+
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale/'),
+)
+print(LOCALE_PATHS)
+LANGUAGES = (
+    ('ar', _('Arabic')),
+    ('en', _('English')),
+)
+
+MULTILINGUAL_LANGUAGES = (
+    "en-us",
+    "ar-ae",
+)
 
 WSGI_APPLICATION = 'aifrd.wsgi.application'
 
@@ -134,13 +150,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_FROM = 'testmesender@gmail.com'
-EMAIL_BCC = '<YOUR DEFAULT_EMAIL_BCC HERE>'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'   
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'testmesender@gmail.com'
-EMAIL_HOST_PASSWORD = 'Test123test'
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+EMAIL_HOST = 'smtp.hostinger.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'contact@aifrd.org'
+DEFAULT_FROM_EMAIL  = 'contact@aifrd.org'
+EMAIL_HOST_PASSWORD = 'gsh@uyU0'
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+
+

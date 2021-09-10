@@ -72,6 +72,8 @@ class StoryDetail(models.Model):
 
 
 class StoryAndBlog(models.Model):
+    bg_image_story_bloag = models.FileField(
+        validators=[validate_image_extension], default='',upload_to='background/stories_and_blogs/', blank=True)
     image_bg_stories = models.FileField(
         validators=[validate_image_extension], default='',upload_to='background/stories_and_blogs/', blank=True)
     text_bg_stories = models.TextField(

@@ -14,6 +14,7 @@ class BlogAdmin(admin.ModelAdmin):
 
 class StoryAndBlogAdmin(admin.ModelAdmin):
     list_display = ['id',
+    'bg_image_story_bloag',
                     'image_bg_stories',
                     'text_bg_stories',
                     'image_bg_blogs',
@@ -56,6 +57,7 @@ class StoryDetailAdmin(admin.ModelAdmin):
                     'story_desc6',
                     'story_desc7',
                     ]
+
 
 
 admin.site.register(StoryAndBlog, StoryAndBlogAdmin)

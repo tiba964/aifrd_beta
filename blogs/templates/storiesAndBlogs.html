@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 {% block body %}
       <section class="page-banner">
-        {% for i in bg_image_teams %}
-        <div class="image-layer" style="background-image: url('{{i.bg_image_temas.url}}')"></div>
+        {% for i in data %}
+        <div class="image-layer" style="background-image: url('{{i.bg_image_story_bloag}}')"></div>
+      
         {% endfor %}
+      <div class="auto-container">
+           <h2>STORIES & BLOGS</h2>
+         </div>
 
         <div class="breadcrumb-box">
           <div class="auto-container">

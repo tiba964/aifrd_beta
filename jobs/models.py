@@ -92,23 +92,23 @@ class VisionMissionValue(models.Model):
         max_length=300, default='', blank=True, )
 
 
-class Contact(models.Model):
-    image_bg_contact = models.FileField(
-        validators=[validate_image_extension], upload_to='background/contact/', )
-    full_name = models.CharField(
-        max_length=200, default='', blank=True, )
-    email = models.EmailField(
-        max_length=255, unique=True,  blank=True,db_index=True, default='', )
-    phone_regex = RegexValidator(
-        regex=r'^\+?1?\d{9,14}$',
-        message="Phone number must be entered in the format: '+999999999'.\
-             Up to 14 digits allowed.")
-    phone = models.CharField(
-        validators=[phone_regex],
-        max_length=17, unique=True, default='', blank=True, )
-    subject = models.CharField(
-        max_length=200, default='', )
-    message = models.TextField(default='',  blank=True,)
+# class Contact(models.Model):
+#     # image_bg_contact = models.FileField(
+#     #     validators=[validate_image_extension], upload_to='background/contact/', )
+#     full_name = models.CharField(
+#         max_length=200, default='', blank=True, )
+#     email = models.EmailField(
+#         max_length=255, unique=True,  blank=True,db_index=True, default='', )
+#     phone_regex = RegexValidator(
+#         regex=r'^\+?1?\d{9,14}$',
+#         message="Phone number must be entered in the format: '+999999999'.\
+#              Up to 14 digits allowed.")
+#     phone = models.CharField(
+#         validators=[phone_regex],
+#         max_length=17, unique=True, default='', blank=True, )
+#     subject = models.CharField(
+#         max_length=200, default='', )
+#     message = models.TextField(default='',  blank=True,)
 
 
 class Donate(models.Model):

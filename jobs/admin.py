@@ -1,6 +1,6 @@
 from jobs.serializers import SliderSerializer
 from django.contrib import admin
-from .models import Contact, Slider, VisionMissionValue, Application, WhatWeAreDoingBackgroundImage, WhoWeAre, Volunteer, Index, Donate, WhatWeAreDoingDetail, About, GetInvolved
+from .models import  Slider, VisionMissionValue, Application, WhatWeAreDoingBackgroundImage, WhoWeAre, Volunteer, Index, Donate, WhatWeAreDoingDetail, About, GetInvolved
 
 
 class ApplicationAdmin(admin.ModelAdmin):
@@ -23,7 +23,6 @@ class DonateAdmin(admin.ModelAdmin):
 
 class ContactAdmin(admin.ModelAdmin):
     list_display = ['id',
-    'image_bg_contact',
                     'full_name',
                     'email',
                     'phone',
@@ -134,7 +133,7 @@ admin.site.register(Slider, SliderAdmin)
 admin.site.register(WhatWeAreDoingBackgroundImage, WhatWeAreDoingBackgroundImageAdmin)
 admin.site.register(GetInvolved, GetInvolvedAdmin)
 admin.site.register(Donate, DonateAdmin)
-admin.site.register(Contact, ContactAdmin)
+# admin.site.register(Contact, ContactAdmin)
 admin.site.register(Application, ApplicationAdmin)
 admin.site.register(Volunteer, VolunteerAdmin)
 admin.site.register(About, AboutAdmin)

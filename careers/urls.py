@@ -13,7 +13,7 @@ urlpatterns = [
     # api
     path('api/careers', api.career_list_api, name='career_list_api'),
     path('api/careers/<int:id>', api.career_detail_api, name='career_detail_api'),
-
+    path('careerForm', views.careerForm, name='careerForm'),
 
     # class based views
     path('api/v2/careers', api.CareerDetailListApi.as_view(), name='career_list_api'),

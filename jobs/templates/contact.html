@@ -3,7 +3,7 @@
      <!-- Page Banner Section -->
      <section class="page-banner">
       {% for i in data %}
-      <div class="image-layer" style="background-image: url('{{i.image_bg_contact}}')"></div>
+      <!-- <div class="image-layer" style="background-image: url('{{i.}}')"></div> -->
     
       {% endfor %}
 
@@ -27,10 +27,11 @@
       <div class="auto-container">
         <div class="row clearfix justify-content-md-center">
           <!--Form Column-->
+          
             <div class="form-column">
               <div class="default-form donate-form">
-                <form action="{% url 'jobs:contactList' %}" method="GET" enctype="multipart/form-data">
-           
+                  <form method="post"  enctype="multipart/form-data">
+                    {% csrf_token %}
                   <div class="row clearfix">
                     <div class="form-group col-md-6 col-sm-12">
                       <div class="field-label">Fullname</div>
@@ -62,7 +63,7 @@
                     </div>
                   </div>
                   <div class="btn-box" style="padding-top: 30px">
-                    <button type="submit" class="theme-btn btn-style-one">
+                    <button type="submit" name="" value="submit" class="theme-btn btn-style-one">
                       <span class="btn-title">Submit</span>
                     </button>
                   </div>

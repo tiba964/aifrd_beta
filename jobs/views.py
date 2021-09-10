@@ -1,16 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.http import HttpResponse
 from rest_framework import generics, permissions
-from .models import Application, Slider, Contact, VisionMissionValue, Volunteer, WhatWeAreDoingBackgroundImage, WhoWeAre, Index, Donate, WhatWeAreDoingDetail, About, GetInvolved
-from .serializers import ApplicationSerializer, SliderSerializer, VisionMissionValueSerializer, ContactSerializer, WhoWeAreSerializer, VolunteerSerializer, IndexSerializer, DonateSerializer, WhatWeAreDoingDetailSerializer, AboutSerializer, GetInvolvedSerializer
+from .models import Application, Slider,  VisionMissionValue, Volunteer, WhatWeAreDoingBackgroundImage, WhoWeAre, Index, Donate, WhatWeAreDoingDetail, About, GetInvolved
+from .serializers import ApplicationSerializer, SliderSerializer, VisionMissionValueSerializer, WhoWeAreSerializer, VolunteerSerializer, IndexSerializer, DonateSerializer, WhatWeAreDoingDetailSerializer, AboutSerializer, GetInvolvedSerializer
 from django.http import HttpRequest
 from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
 from .filters import WhatWeAreDoingDetailFilter
-from .form import WhatWeAreDoingDetailForm
 from django.core.paginator import Paginator
-from blogs.filters import StoryDetailFilter
-from blogs.form import StoryDetailForm
-from blogs.models import StoryDetail
 
+from blogs.models import StoryDetail
+from django.core.mail import send_mail
 
 class ApplicationList(generics.ListCreateAPIView):
     queryset = Application.objects.all()
@@ -123,35 +122,84 @@ def donate(request):
 
 
 def contact(request):
-    """Renders the create contact page."""
+    if request.method == 'POST':
+        print("hello")
+        name = request.POST.get('full_name')
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        data = {
+            'name': name,
+            'phone' : phone,
+            'email' : email,
+            'subject' : subject,
+            'message' : message,
+        }
+        print(data)
+        message = ''' 
+        New message :{}
+        From: {}
+        '''.format(data['message'], data['email'])
+
+        if subject and message and email:
+            try:
+                send_mail(data['subject'], message, from_email= 'contact@aifrd.org',recipient_list= ['contact@aifrd.org'],  fail_silently=False)
+
+            except  Exception as error:
+                return HttpResponse('Invalid header found.')
     return render(request, 'contact.html')
 
+def volunteerForm(request):
+    if request.method == 'POST':
+        print("hello")
+        name = request.POST.get('full_name')
+        gender = name = request.POST.get('gender')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        region = request.POST.get('region')
+        address = request.POST.get('address')
+        upload_cv = request.POST.get('upload_cv')
+        select_language = request.POST.get('select_language')
+        cover_letter = request.POST.get('cover_letter')
+        data = {
+            'name': name,
+            'gender' : gender,
+            'email' : email,
+            'phone' : phone,
+            'region' : region,
 
-def contactList(request):
-    """Renders the create contact page."""
-    assert isinstance(request, HttpRequest)
-    queryset = Contact.objects.all()
-    serializer_class = ContactSerializer(queryset, many=True)
-    full_name = request.GET.get('full_name')
-    email = request.GET.get('email')
-    phone = request.GET.get('phone')
-    subject = request.GET.get('subject')
-    message = request.GET.get('message')
-    contactcreated = Contact.objects.create(full_name=full_name,
-                                            email=email,
-                                            phone=phone,
-                                            subject=subject,
-                                            message=message,
-                                            )
-    return render(request, 'contactList.html',
-                  {
-                      'data': serializer_class.data,
-                  }
-                  )
+            'address': address,
+            'upload_cv' : upload_cv,
+            'select_language' : select_language,
+            'cover_letter' : cover_letter,
+        }
+        print(data)
+        message = ''' 
+        New Volunteer :{}
+        From: {}
+        Phone: {}
+        Region: {}
+        Gender: {}
+        Address:{}
+        CV: {}
+        Language:{}
+        Cover_letter: {}
+
+
+        '''.format(data['name'], data['email'], data['phone'], data['region'], data['gender'], data['address'], data['upload_cv'], data['select_language'], data['cover_letter'])
+
+        if name and gender and email and phone and  region and address and   upload_cv and select_language and cover_letter:
+            try:
+                send_mail(data['name'], message, from_email= 'volunteer@aifrd.org',recipient_list= ['volunteer@aifrd.org'],  fail_silently=False)
+
+            except  Exception as error:
+                return HttpResponse('Invalid header found.')
+    return render(request, 'volunteer.html')
 
 
 def what_we_are_doing(request):
-    """Renders the create volunteer page."""
+    """Renders the create what_we_are_doing page."""
     whatWeDo = WhatWeAreDoingDetail.objects.all()
 
     # filters
@@ -175,7 +223,7 @@ def what_we_are_doing(request):
 
 
 def what_we_are_doing_details(request, id):
-    """Renders the create volunteer page."""
+    """Renders the create what_we_are_doing_details page."""
     whatWeDo = WhatWeAreDoingDetail.objects.get(id=id)
 
     context = {'whatWeDo': whatWeDo}
@@ -196,7 +244,7 @@ def vision_mission_value(request):
 
 
 def about(request):
-    """Renders the create volunteer page."""
+    """Renders the create about page."""
     assert isinstance(request, HttpRequest)
     queryset = About.objects.all()
     serializer_class = AboutSerializer(queryset, many=True)
@@ -209,7 +257,7 @@ def about(request):
 
 
 def get_involved(request):
-    """Renders the create volunteer page."""
+    """Renders the create get_involved page."""
     assert isinstance(request, HttpRequest)
     queryset = GetInvolved.objects.all()
     serializer_class = GetInvolvedSerializer(queryset, many=True)
@@ -222,7 +270,7 @@ def get_involved(request):
 
 
 def who_we_are(request):
-    """Renders the create volunteer page."""
+    """Renders the create who_we_are page."""
     assert isinstance(request, HttpRequest)
     queryset = WhoWeAre.objects.all()
     serializer_class = WhoWeAreSerializer(queryset, many=True)

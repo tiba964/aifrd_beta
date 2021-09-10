@@ -11,8 +11,7 @@ JOB_TYPE = (
 
 
 class CareerDetail(models.Model):
-    image_career_details = models.FileField(
-        validators=[validate_image_extension], upload_to='background/career_details/', null=True, blank=True)
+   
     title = models.CharField(max_length=300, default='', null=True, blank=True)
     description = models.TextField(null=True, blank=True)
 

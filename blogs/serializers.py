@@ -28,7 +28,6 @@ class StoryBackgroundImageSerializer(serializers.ModelSerializer):
         model = StoryBackgroundImage
         fields = '__all__'
 
-
 class TeamSerializer(serializers.ModelSerializer):
 
     class Meta:

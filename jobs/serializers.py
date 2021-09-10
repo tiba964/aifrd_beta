@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Application, Slider, Contact, VisionMissionValue, WhatWeAreDoingBackgroundImage, WhoWeAre, Volunteer, Index, Donate, WhatWeAreDoingDetail, About, GetInvolved
+from .models import Application, Slider, VisionMissionValue, WhatWeAreDoingBackgroundImage, WhoWeAre, Volunteer, Index, Donate, WhatWeAreDoingDetail, About, GetInvolved
 from django.core.mail import send_mail
 
 
@@ -11,11 +11,11 @@ class ApplicationSerializer(serializers.ModelSerializer):
                   'gender', 'english', 'arabic', 'kurdish', 'cover_letter', 'upload_cv']
 
 
-class ContactSerializer(serializers.ModelSerializer):
+# class ContactSerializer(serializers.ModelSerializer):
 
-    class Meta:
-        model = Contact
-        fields = '__all__'
+#     class Meta:
+#         model = Contact
+#         fields = '__all__'
 
 
 class DonateSerializer(serializers.ModelSerializer):

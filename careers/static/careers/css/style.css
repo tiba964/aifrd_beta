@@ -396,7 +396,7 @@
 	 top: 0;
 	 z-index:-1;
 	 height: 100%;
-	 background: #f5a93f;
+	 background: #426E94;
 	 width: 100%;
 	 -webkit-transform: scale(1, 1);
 	 -ms-transform: scale(1, 1);
@@ -8996,6 +8996,7 @@
 .story-details .info-box .cause-info li{
 	position: relative;
 	float: left;
+	width: 500px;
 	padding: 0px 10px;
 	line-height: 24px;
 	margin-bottom: 8px;
@@ -9986,9 +9987,9 @@
 .featured-block-two .image-box img{
 	display: block;
 	width:100%;	
-	padding-top: 20px;
-	padding-left: 60px;
-	padding-right: 60px;
+	padding-top: 50px;
+	padding-left: 100px;
+	padding-right: 100px;
 	text-align: center;
 	/* height: 100px; */
 	border-radius:5px 5px 0px 0px;
