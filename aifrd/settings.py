@@ -154,9 +154,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 EMAIL_HOST = 'smtp.hostinger.com'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'contact@aifrd.org'
-DEFAULT_FROM_EMAIL  = 'contact@aifrd.org'
-EMAIL_HOST_PASSWORD = 'gsh@uyU0'
+EMAIL_HOST_USER = 'representative@aifrd.org'
+DEFAULT_FROM_EMAIL  = 'representative@aifrd.org'
+EMAIL_HOST_PASSWORD = 'zaU89@fgsQ'
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 

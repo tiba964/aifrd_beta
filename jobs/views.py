@@ -1,3 +1,4 @@
+from email.message import EmailMessage
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from rest_framework import generics, permissions
@@ -9,7 +10,7 @@ from .filters import WhatWeAreDoingDetailFilter
 from django.core.paginator import Paginator
 
 from blogs.models import StoryDetail
-from django.core.mail import send_mail
+from django.core.mail import send_mail,  EmailMessage
 
 class ApplicationList(generics.ListCreateAPIView):
     queryset = Application.objects.all()
@@ -137,6 +138,7 @@ def contact(request):
             'message' : message,
         }
         print(data)
+      
         message = ''' 
         New message :{}
         From: {}
@@ -144,7 +146,7 @@ def contact(request):
 
         if subject and message and email:
             try:
-                send_mail(data['subject'], message, from_email= 'contact@aifrd.org',recipient_list= ['contact@aifrd.org'],  fail_silently=False)
+                send_mail(data['subject'], message, from_email= 'representative@aifrd.org',recipient_list= ['contact@aifrd.org'],  fail_silently=False)
 
             except  Exception as error:
                 return HttpResponse('Invalid header found.')
@@ -154,14 +156,27 @@ def volunteerForm(request):
     if request.method == 'POST':
         print("hello")
         name = request.POST.get('full_name')
-        gender = name = request.POST.get('gender')
+        gender = request.POST.get('gender')
         email = request.POST.get('email')
         phone = request.POST.get('phone')
         region = request.POST.get('region')
         address = request.POST.get('address')
-        upload_cv = request.POST.get('upload_cv')
-        select_language = request.POST.get('select_language')
+        upload_cv = request.FILES.get('upload_cv')
+        English = request.POST.get('English')
+        Arabic = request.POST.get('Arabic')
+        Kurdish = request.POST.get('Kurdish')
+        languages = {"English": English,
+        "Arabic":Arabic,
+        "Kurdish":Kurdish
+        }
         cover_letter = request.POST.get('cover_letter')
+        # print(select_language)
+        select_language = []
+
+        for language in languages:
+            print(language)
+            if languages[language] != None:
+                select_language.append(language)
         data = {
             'name': name,
             'gender' : gender,
@@ -175,8 +190,9 @@ def volunteerForm(request):
             'cover_letter' : cover_letter,
         }
         print(data)
+        print("hello")
         message = ''' 
-        New Volunteer :{}
+        New applicant :{}
         From: {}
         Phone: {}
         Region: {}
@@ -189,13 +205,24 @@ def volunteerForm(request):
 
         '''.format(data['name'], data['email'], data['phone'], data['region'], data['gender'], data['address'], data['upload_cv'], data['select_language'], data['cover_letter'])
 
-        if name and gender and email and phone and  region and address and   upload_cv and select_language and cover_letter:
-            try:
-                send_mail(data['name'], message, from_email= 'volunteer@aifrd.org',recipient_list= ['volunteer@aifrd.org'],  fail_silently=False)
+        if name and gender and email  and phone and  region  and  address and   upload_cv  and cover_letter:
 
-            except  Exception as error:
-                return HttpResponse('Invalid header found.')
+            email = EmailMessage(
+                              data['name'],    
+                              message,
+                              'representative@aifrd.org', ['volunteer@aifrd.org'],)
+                          
+            if request.FILES:
+                            uploaded_file = request.FILES['upload_cv'] # file is the name value which you have provided in form for file field
+                            email.attach(uploaded_file.name, uploaded_file.read(), uploaded_file.content_type)
+                            email.send()
+            #     send_mail(data['carrer_name'], message, from_email= 'representative@aifrd.org',recipient_list= ['hr@aifrd.org'],  fail_silently=False)
+            #     send_mail.attach(message. attach.read(), )
+            #     send_mail.send()
+            # except  Exception as error:
+            #     return HttpResponse('Invalid header found.')
     return render(request, 'volunteer.html')
+
 
 
 def what_we_are_doing(request):

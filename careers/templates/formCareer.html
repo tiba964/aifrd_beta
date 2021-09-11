@@ -33,11 +33,12 @@
                      <!--   display:none;
                       visibility:hidden; -->
                   <div class="row clearfix">
-                    <div 
+                    <div  style="  display:none;
+                    visibility:hidden; "
                  
                    class="form-group col-md-6 col-sm-12">
                       <div class="field-label">{{career}}</div>
-                      <input type="text" name="career_name" value="" placeholder="" required />
+                      <input type="text" name="career_name" value="{{ career }}" placeholder="" />
                     </div>
                     <div class="form-group col-md-6 col-sm-12">
                       <div class="field-label">Fullname</div>
@@ -57,7 +58,7 @@
 
                     <div class="form-group col-md-6 col-sm-12">
                       <div class="field-label">Phone Number</div>
-                      <input type="number" name="phone" value="" placeholder="" />
+                      <input type="text" name="phone" value="" placeholder="" />
                     </div>
 
                     <div class="form-group col-md-6 col-sm-12">
@@ -91,6 +92,7 @@
                       <div class="field-label">Upload your CV:</div>
                       <input type="file" name="upload_cv" style="color: blue" />
                     </div>
+                   
                     <div class="form-group form-group col-md-6 col-sm-12">
                       <div class="field-label">Select Language</div>
                       <table>
@@ -105,7 +107,7 @@
                                   mdl-js-checkbox
                                   mdl-js-ripple-effect
                                 " for="checkbox1">
-                              <input type="checkbox" id="checkbox1" class="mdl-checkbox__input" name="english" />
+                              <input type="checkbox" id="checkbox1" class="mdl-checkbox__input" name="English" />
                               <span class="mdl-checkbox__label">English</span>
                             </label>
                           </td>
@@ -120,7 +122,7 @@
                                   mdl-js-checkbox
                                   mdl-js-ripple-effect
                                 " for="checkbox2">
-                              <input type="checkbox" id="checkbox2" class="mdl-checkbox__input" name="arabic" />
+                              <input type="checkbox" id="checkbox2" class="mdl-checkbox__input" name="Arabic" />
                               <span class="mdl-checkbox__label">Arabic</span>
                             </label>
                           </td>
@@ -135,7 +137,7 @@
                                   mdl-js-checkbox
                                   mdl-js-ripple-effect
                                 " for="checkbox3">
-                              <input type="checkbox" id="checkbox3" class="mdl-checkbox__input" name="kurdish" />
+                              <input type="checkbox" id="checkbox3" class="mdl-checkbox__input" name="Kurdish" />
                               <span class="mdl-checkbox__label">Kurdish</span>
                             </label>
                           </td>
