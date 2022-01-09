@@ -10,14 +10,14 @@ from rest_framework import generics
 @api_view(['GET'])
 def career_list_api(request):
     all_jobs = CareerDetail.objects.all()
-    data = CareerDetailSerializer(all_careers, many=True).data
+    data = CareerDetailSerializer(all_jobs, many=True).data
     return Response({'data': data})
 
 
 @api_view(['GET'])
 def career_detail_api(request, id):
     career_detail_detail = CareerDetail.objects.get(id=id)
-    data = CareerDetailSerializer(career_detail).data
+    data = CareerDetailSerializer(career_detail_detail).data
     return Response({'data': data})
 
 

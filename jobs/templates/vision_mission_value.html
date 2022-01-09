@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block body %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
       <!-- Page Banner Section -->
       <section class="page-banner">
         {% for i in data %}
@@ -9,15 +11,15 @@
 
       
         <div class="auto-container">
-          <h3> VISSION & MISSION</h3>
+          <h3>{% trans "VISSION & MISSION" %}</h3>
         </div>
   
     <div class="breadcrumb-box">
       <div class="auto-container">
         <ul class="bread-crumb clearfix">
-          <li><a href="{% url 'jobs:index' %}" style="font-size: 12px">HOME</a></li>
-  
-          <li class="active"><a href="{% url 'blogs:teams' %}"></a> ABOUT AIFRD</li>
+          <li><a class="dirBanner" href="{% url 'jobs:index' %}" style="font-size: 12px">{% trans  "HOME" %}</a></li>
+
+        <li class="active"><a href="{% url 'blogs:teams' %}"></a> {% trans  "ABOUT AIFRD" %}</li>
         </ul>
       </div>
     </div>
@@ -29,30 +31,34 @@
         <div class="auto-container">
           <div class="lower-box story-details">
             <h1  style="font-size: 25px;padding-bottom: 30px;padding-top: 30px;">
-                Vision </h1>
-                                <div class="info-box clearfix">
+              {% trans "Vision" %}</h1>
+                                <div class="info-box clearfix vission_mission">
                                     {% for i in data %}
                                  
                                 </div>
                               
                             </div>
-                            <p>{{i.vission_text}}</p> 
+                            <p>{% if LANGUAGE_CODE == 'en' %}{{i.vission_text}}
+                              {% elif LANGUAGE_CODE == 'ar' %}{{i.vission_text_ar}}{% endif %}</p> 
         
         </div>   {% endfor %}
         <div class="auto-container">
             <div class="lower-box story-details">
               <h1  style="font-size: 25px;padding-bottom: 30px;padding-top: 30px;">
-                  Mission </h1>
-                                  <div class="info-box clearfix">
+                {% trans "Mission" %} </h1>
+                                  <div class="info-box clearfix vission_mission">
                                       {% for i in data %}
                                    
                                   </div>
                                 
                               </div>
-                              <p>{{i.Vission_Mission_Value_desc1}}</p>
+                              <p>{% if LANGUAGE_CODE == 'en' %}{{i.Vission_Mission_Value_desc1}}
+                                {% elif LANGUAGE_CODE == 'ar' %}{{i.Vission_Mission_Value_desc1_ar}}{% endif %}</p>
 
-                              <p>{{i.Vission_Mission_Value_desc2}}</p> 
-                              <p>{{i.mission_text}}</p> 
+                              <p>{% if LANGUAGE_CODE == 'en' %}{{i.Vission_Mission_Value_desc2}}
+                                {% elif LANGUAGE_CODE == 'ar' %}{{i.Vission_Mission_Value_desc2_ar}}{% endif %}</p> 
+                              <p>{% if LANGUAGE_CODE == 'en' %}{{i.mission_text}}
+                                {% elif LANGUAGE_CODE == 'ar' %}{{i.mission_text_ar}}{% endif %} </p> 
           
           </div>   {% endfor %}
     </section>

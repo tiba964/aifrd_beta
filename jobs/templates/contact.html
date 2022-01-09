@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block body %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
      <!-- Page Banner Section -->
      <section class="page-banner">
       {% for i in data %}
@@ -8,22 +10,22 @@
       {% endfor %}
 
       <div class="auto-container" >
-        <h3 style="text-align: center;">Become a vital part of AIFRD & make a real difference to lives of many!</h3>
+        <h3 style="text-align: center;">{% trans "Become a vital part of AIFRD & make a real difference to lives of many!" %}</h3>
         
       </div>
 
       <div class="breadcrumb-box">
         <div class="auto-container">
           <ul class="bread-crumb clearfix">
-            <li><a href="{% url 'jobs:index' %}" style="font-size: 12px">HOME</a></li>
+            <li><a class="dirBanner" href="{% url 'jobs:index' %}" style="font-size: 12px">{% trans "HOME" %}</a></li>
             <!-- <li><a href="{% url 'jobs:get_involved' %}" style="font-size:12px">GET INVOLVED</a></li> -->
-            <li class="active" style="font-size:12px">Contact us</li>
+            <li class="active" style="font-size:12px">{% trans "CONTACT US" %}</li>
           </ul>
         </div>
       </div>
     </section>
     <!--End Banner Section -->
-  <section class="contact-section contact-page" style="padding-left: 20px">
+  <section class="contact-section contact-page" style="padding-left: 20px; padding-right: 20px;">
       <div class="auto-container">
         <div class="row clearfix justify-content-md-center">
           <!--Form Column-->
@@ -34,37 +36,37 @@
                     {% csrf_token %}
                   <div class="row clearfix">
                     <div class="form-group col-md-6 col-sm-12">
-                      <div class="field-label">Fullname</div>
+                      <div class="field-label">{% trans "Fullname" %}</div>
                       <input type="text" name="full_name" value="" placeholder="" required />
                     </div>
                    
                     <div class="form-group col-md-6 col-sm-12">
-                      <div class="field-label">Email</div>
+                      <div class="field-label">{% trans "Email" %}</div>
                       <input type="email" name="email" value="" placeholder="" required />
                     </div>
 
                     <div class="form-group col-md-6 col-sm-12">
-                      <div class="field-label">Phone Number</div>
+                      <div class="field-label">{% trans "Phone Number" %}</div>
                       <input type="number" name="phone" value="" placeholder="" />
                     </div>
 
                    
 
                     <div class="form-group col-md-6 col-sm-12">
-                      <div class="field-label">Subject</div>
+                      <div class="field-label">{% trans "Subject" %}</div>
                       <input type="text" name="subject" value="" placeholder="" required />
                     </div>
                    
                  
 
                     <div class="form-group form-group col-md-12 col-sm-12">
-                      <div class="field-label">Message</div>
+                      <div class="field-label">{% trans "Message" %}</div>
                       <textarea name="message" placeholder=""></textarea>
                     </div>
                   </div>
                   <div class="btn-box" style="padding-top: 30px">
                     <button type="submit" name="" value="submit" class="theme-btn btn-style-one">
-                      <span class="btn-title">Submit</span>
+                      <span class="btn-title">{% trans "Submit" %}</span>
                     </button>
                   </div>
                 </form>
@@ -76,15 +78,17 @@
               <!--Info Block-->
               <div class="info-block pdrun bg-blue col-xl-4 col-lg-6 col-md-6 col-sm-12">
                   <div class="inner" >
-                      <h3 >Keep touch with us</h3>
+                      <h3 >{% trans "Keep touch with us" %}</h3>
                       <ul class="info">
-                        <li><span class="fa fa-map-marker-alt"></span> Salah Al-Den, Iraq</li>
-                        <li><span class="fa fa-phone-alt"></span> <a href="tel:+964 773 1476 198">Phone Number +964 781 691 8934</a></li>
-                        <li><span class="fa fa-envelope-open"></span> <a href="mailto:contact@aifrd.org">contact@aifrd.org</a></li>
+                        <li><span class="fa fa-map-marker-alt"></span> {% trans "Salah Al-Den, Iraq" %}</li>
+                        <li><span class="fa fa-phone-alt"></span> <a href="tel:+964 773 1476 198">{% trans "Phone Number" %} +964 781 691 8934</a></li>
+                        <li><span class="fa fa-envelope-open"></span> <a href="mailto:contact@ashuor.org">contact@ashuor.org</a></li>
                     </ul> <ul class="social-links clearfix">
-                        <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                      <li><a href="https://www.facebook.com/ashuriraq/"><span class="fab fa-facebook-f"></span></a></li>
+                      <li><a href="https://twitter.com/ashoriqd?s=11"><span class="fab fa-twitter"></span></a></li>
+                      <li><a href="https://www.facebook.com/ashuriraq/"><span class="fab fa-instagram"></span></a></li>
+                      <li><a href="https://www.linkedin.com/company/ashuor"><span class="fab fa-linkedin"></span></a></li>
+                      <li><a href="https://youtube.com/channel/UCzTbdmJoPxvdnby9Q9JMYJg"><span class="fab fa-youtube"></span></a></li>
                     </ul >
                          <div style="padding: 15px;">
                           

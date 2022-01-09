@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block body %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
        <!-- Page Banner Section -->
    <section class="page-banner">
     {% for i in storyBackgroundImage %}
@@ -7,15 +9,15 @@
   
     {% endfor %}
 
-     <!-- <div class="auto-container">
-       <h1>STORIES</h1>
-     </div> -->
+       <div class="auto-container">
+        <h3>{% trans "STORIES" %}</h3>
+      </div>
 
      <div class="breadcrumb-box">
        <div class="auto-container">
          <ul class="bread-crumb clearfix">
-           <li><a href="{% url 'jobs:index' %}">HOME</a></li>
-           <li class="active">STORIES</li>
+           <li><a class="dirBanner" href="{% url 'jobs:index' %}"> {% trans "HOME" %}</a></li>
+           <li class="active"><a href="{% url 'blogs:stories_and_blogs' %}" >  {% trans "STORIES & BLOGS" %}</a></li>
          </ul>
        </div>
      </div>
@@ -51,7 +53,9 @@
                                 <div class="cause-info">
                                     <ul class="clearfix">
                                       <li><span class="far flaticon-calendar"></span> <span>{{story.story_date|date:'d M o'}}</span> </li>
-                                      <li><span class="fa fa-map-marker-alt"></span> {{story.story_location}}</li>
+                                      <li><span class="fa fa-map-marker-alt"></span> 
+                                        {% if LANGUAGE_CODE == 'en' %}{{story.story_location}}
+                                        {% elif LANGUAGE_CODE == 'ar' %}{{story.story_location_ar}}{% endif %}</li>
                                    </ul>
                                 </div>
                                
@@ -61,19 +65,21 @@
                 </div>
            
                          <h4 style="font-size:16px">
-                   <a href="{% url 'blogs:stories_detail' story.id %}"
-                     >{{story.story_name}}</a
-                   >
+                   <a href="{% url 'blogs:stories_detail' story.id %}" >
+                    {% if LANGUAGE_CODE == 'en' %} {{story.story_name}}
+                    {% elif LANGUAGE_CODE == 'ar' %} {{story.story_name_ar}}{% endif %}
+                   </a>
 
                    <h4>
- <p style="font-size:14px">  {{ story.story_desc1 }}
-                                 </p>
+ <p style="font-size:14px"> 
+  {% if LANGUAGE_CODE == 'en' %} {{ story.story_desc1 }}
+  {% elif LANGUAGE_CODE == 'ar' %}  {{ story.story_desc1_ar }} {% endif %}              </p>
 
                  <ul class="info">
                   
                    <li>
                     <div class="link-box" style="padding-left:4px;font-size:12px">
-                      <a href="{% url 'blogs:stories_detail' story.id %}" class="default-link"> READ MORE</a></div>
+                      <a href="{% url 'blogs:stories_detail' story.id %}" class="default-link"> {% trans "READ MORE" %}</a></div>
 </li>
                   
                  </ul>

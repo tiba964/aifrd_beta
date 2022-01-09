@@ -10,6 +10,9 @@ class BlogAdmin(admin.ModelAdmin):
                     'blogs_date',
                     'blogs_desc',
                     'blogs_location',
+                    'blogs_title_ar',
+                    'blogs_desc_ar',
+                    'blogs_location_ar',
                     ]
 
 class StoryAndBlogAdmin(admin.ModelAdmin):
@@ -17,8 +20,10 @@ class StoryAndBlogAdmin(admin.ModelAdmin):
     'bg_image_story_bloag',
                     'image_bg_stories',
                     'text_bg_stories',
+                     'text_bg_stories_ar',
                     'image_bg_blogs',
                     'text_bg_blogs',
+                     'text_bg_blogs_ar',
                     ]
 
 class TeamBackgroundImageAdmin(admin.ModelAdmin):
@@ -38,6 +43,8 @@ class TeamAdmin(admin.ModelAdmin):
                     'teams_image',
                     'teams_name',
                     'teams_desc',
+                      'teams_name_ar',
+                    'teams_desc_ar',
                     ]
 
 
@@ -56,6 +63,15 @@ class StoryDetailAdmin(admin.ModelAdmin):
                     'story_desc5',
                     'story_desc6',
                     'story_desc7',
+                    'story_location_ar',
+                    'story_name_ar',
+                    'story_desc1_ar',
+                    'story_desc2_ar',
+                    'story_desc3_ar',
+                    'story_desc4_ar',
+                    'story_desc5_ar',
+                    'story_desc6_ar',
+                    'story_desc7_ar',
                     ]
 
 

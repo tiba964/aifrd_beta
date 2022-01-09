@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-29 19:06+0200\n"
+"POT-Creation-Date: 2021-12-06 18:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,27 +19,596 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: .\careers\templates\base.html:10
-msgid "Ashor Iraqi Foundation for Relief and Development"
-msgstr "منظمة آشور العراقية للإغاثة و التنمية"
-
-#: .\careers\templates\base.html:65
-msgid "WHO WE ARE"
-msgstr "من نحن"
-
-#: .\humimp\settings.py:135
+#: .\aifrd\settings.py:140 .\careers\templates\formCareer.html:128
 msgid "Arabic"
 msgstr "العربية"
 
-#: .\humimp\settings.py:136
+#: .\aifrd\settings.py:141 .\careers\templates\formCareer.html:113
+#: .\jobs\templates\volunteer.html:107
 msgid "English"
-msgstr "الانجليزية"
+msgstr ""
 
-#: .\jobs\models.py:36
-msgid "full_name"
-msgstr "الاسم بالكامل"
+#: .\blogs\templates\blogs.html:20 .\blogs\templates\stories.html:19
+#: .\blogs\templates\storiesAndBlogs.html:17
+#: .\blogs\templates\stories_detail.html:18 .\blogs\templates\teams.html:18
+#: .\careers\templates\career_list.html:22
+#: .\careers\templates\formCareer.html:19 .\jobs\templates\about.html:21
+#: .\jobs\templates\contact.html:20 .\jobs\templates\donate.html:18
+#: .\jobs\templates\get_involved.html:20
+#: .\jobs\templates\vision_mission_value.html:20
+#: .\jobs\templates\volunteer.html:20
+#: .\jobs\templates\what_we_are_doing.html:20
+#: .\jobs\templates\what_we_are_doing_details.html:18
+#: .\jobs\templates\who_we_are.html:22
+msgid "HOME"
+msgstr "الرئيسية "
 
-#: .\jobs\models.py:44
-msgid "phone"
-msgstr "الهاتف"
+#: .\blogs\templates\blogs.html:21
+msgid "BLOGS"
+msgstr "مدونتنا"
 
+#: .\blogs\templates\stories.html:13 .\blogs\templates\stories_detail.html:19
+msgid "STORIES"
+msgstr "قصصنا"
+
+#: .\blogs\templates\stories.html:20 .\blogs\templates\storiesAndBlogs.html:11
+#: .\blogs\templates\storiesAndBlogs.html:18
+msgid "STORIES & BLOGS"
+msgstr "القصص والمدونة"
+
+#: .\blogs\templates\stories.html:82 .\careers\templates\career_list.html:78
+#: .\jobs\templates\index.html:52 .\jobs\templates\index.html:221
+msgid "READ MORE"
+msgstr "اقرا المزيد"
+
+#: .\blogs\templates\storiesAndBlogs.html:46 .\careers\templates\base.html:81
+msgid "OUR STORIES"
+msgstr "قصصنا"
+
+#: .\blogs\templates\storiesAndBlogs.html:68 .\careers\templates\base.html:82
+msgid "OUR BLOGS"
+msgstr "مدونتنا"
+
+#: .\blogs\templates\teams.html:12 .\careers\templates\base.html:72
+msgid "OUR TEAMS"
+msgstr "فريقنا"
+
+#: .\blogs\templates\teams.html:20 .\careers\templates\base.html:69
+#: .\careers\templates\base.html:225 .\jobs\templates\about.html:23
+#: .\jobs\templates\vision_mission_value.html:22
+#: .\jobs\templates\who_we_are.html:24
+msgid "ABOUT AIFRD"
+msgstr " عن AIFRD "
+
+#: .\careers\templates\base.html:10 .\careers\templates\base2.html:10
+#: .\careers\templates\test.html:8 .\jobs\templates\index.html:48
+#: .\jobs\templates\who_we_are.html:35
+msgid "Ashor Iraqi Foundation for Relief and Development"
+msgstr "مؤسسة آشور العراقية لألغاثة والتنمية "
+
+#: .\careers\templates\base.html:71 .\careers\templates\base.html:227
+#: .\careers\templates\test.html:64 .\jobs\templates\who_we_are.html:16
+msgid "WHO WE ARE"
+msgstr "من نحن"
+
+#: .\careers\templates\base.html:73 .\careers\templates\base.html:229
+msgid "VISION & MISSION"
+msgstr "الرؤية والهدف"
+
+#: .\careers\templates\base.html:77 .\careers\templates\base.html:262
+#: .\jobs\templates\what_we_are_doing.html:14
+#: .\jobs\templates\what_we_are_doing.html:21
+#: .\jobs\templates\what_we_are_doing_details.html:20
+msgid "WHAT WE ARE DOING"
+msgstr "ماذا نفعل"
+
+#: .\careers\templates\base.html:79 .\careers\templates\base.html:263
+msgid "STORIES & BLOG"
+msgstr "القصص والمدونة"
+
+#: .\careers\templates\base.html:86 .\careers\templates\base.html:264
+#: .\careers\templates\career_detail.html:17
+#: .\careers\templates\career_list.html:25
+#: .\careers\templates\formCareer.html:20 .\jobs\templates\get_involved.html:21
+#: .\jobs\templates\volunteer.html:21
+msgid "GET INVOLVED"
+msgstr "شارك"
+
+#: .\careers\templates\base.html:88 .\careers\templates\career_detail.html:20
+#: .\careers\templates\career_list.html:14
+#: .\jobs\templates\get_involved.html:46
+msgid "CAREERS"
+msgstr "الوظائف"
+
+#: .\careers\templates\base.html:89 .\jobs\templates\get_involved.html:66
+msgid "JOIN US AS VOLUNTEER"
+msgstr "انظم معنا كمتطوع"
+
+#: .\careers\templates\base.html:92 .\jobs\templates\contact.html:22
+msgid "CONTACT US"
+msgstr "اتصل بنا"
+
+#: .\careers\templates\base.html:93
+msgid "LANGUAGE"
+msgstr "اللغة"
+
+#: .\careers\templates\base.html:116
+msgid "Donate Now"
+msgstr "تبرع الان"
+
+#: .\careers\templates\base.html:206
+msgid ""
+"Ashor Iraqi Foundation for Relief and Development responds to the world’s "
+"worst humanitarian crises and helps people to survive and rebuild their "
+"lives."
+msgstr ""
+"تستجيب مؤسسة أشور العراقية للإغاثة والتنمية لأسوأ الأزمات الإنسانية في "
+"العالم وتساعد الناس على البقاء على قيد الحياة وإعادة بناء حياتهم."
+
+#: .\careers\templates\base.html:228
+msgid "OUR TEAM"
+msgstr "فريقنا"
+
+#: .\careers\templates\base.html:240
+msgid "Contact Us"
+msgstr "اتصل الان"
+
+#: .\careers\templates\base.html:242 .\jobs\templates\contact.html:83
+msgid "Salah Al-Den, Iraq"
+msgstr "صلاح الدين, العراق"
+
+#: .\careers\templates\base.html:259
+msgid "QUICK LINKS"
+msgstr "روابط سريعة"
+
+#: .\careers\templates\base.html:283
+msgid "Copyrights"
+msgstr "حقوق النشر"
+
+#: .\careers\templates\base.html:284
+msgid "Ashor Iraqi Foundation for Relief and Development."
+msgstr "مؤسسة آشور العراقية لألغاثة والتنمية "
+
+#: .\careers\templates\base.html:285
+msgid "All rights reserved."
+msgstr "كل الحقوق محفوظة"
+
+#: .\careers\templates\career_detail.html:39
+msgid "The Description"
+msgstr "الوصف"
+
+#: .\careers\templates\career_detail.html:42
+msgid "Job Information"
+msgstr "معلومات الوظيفة"
+
+#: .\careers\templates\career_detail.html:48
+msgid "Contract Duration"
+msgstr "مدة العقد"
+
+#: .\careers\templates\career_detail.html:52
+msgid "Governorate"
+msgstr "المحافظة"
+
+#: .\careers\templates\career_detail.html:57
+msgid "Working Hours"
+msgstr "عدد الساعات"
+
+#: .\careers\templates\career_detail.html:62
+msgid "Location"
+msgstr "الموقع"
+
+#: .\careers\templates\career_detail.html:68
+msgid "Posted"
+msgstr "تم النشر"
+
+#: .\careers\templates\career_detail.html:75
+msgid "Requirements"
+msgstr "المتطلبات"
+
+#: .\careers\templates\career_detail.html:81
+msgid "Minimum Education"
+msgstr "الحد الأدنى من التعليم"
+
+#: .\careers\templates\career_detail.html:86
+msgid "Minimum Experience"
+msgstr "الحد الأدنى من الخبرة"
+
+#: .\careers\templates\career_detail.html:90
+msgid "Required Travel"
+msgstr "السفر المطلوب"
+
+#: .\careers\templates\career_detail.html:99
+msgid "Job Status"
+msgstr "حالة الوظيفة"
+
+#: .\careers\templates\career_detail.html:105
+msgid "No Of Jobs"
+msgstr "عدد الوظائف"
+
+#: .\careers\templates\career_detail.html:109
+msgid "Published Date"
+msgstr "تاريخ النشر"
+
+#: .\careers\templates\career_detail.html:113
+msgid "Deadline Date"
+msgstr "تاريخ الموعد النهائي"
+
+#: .\careers\templates\career_detail.html:139
+msgid "Role and responsibilities"
+msgstr "الدور والمسؤوليات"
+
+#: .\careers\templates\career_detail.html:181
+msgid "Qualifications & Preferred Skills"
+msgstr "المؤهلات والمهارات المفضلة"
+
+#: .\careers\templates\career_detail.html:222
+msgid "Apply Now"
+msgstr "قدم الآن"
+
+#: .\careers\templates\career_list.html:46
+msgid "latest careers"
+msgstr "أحدث الوظائف"
+
+#: .\careers\templates\formCareer.html:12 .\jobs\templates\index.html:132
+#: .\jobs\templates\volunteer.html:13
+msgid ""
+"Become a vital part of Ashor Iraqi Foundation for Relief and Development & "
+"make a real difference to lives of many!"
+msgstr ""
+"كن جزءًا حيويًا من مؤسسة أشور العراقية للإغاثة والتنمية وأحدث فرقًا حقيقيًا في "
+"حياة الكثيرين!"
+
+#: .\careers\templates\formCareer.html:46 .\jobs\templates\contact.html:39
+#: .\jobs\templates\volunteer.html:41
+msgid "Fullname"
+msgstr "الاسم الثلاثي"
+
+#: .\careers\templates\formCareer.html:50 .\jobs\templates\volunteer.html:45
+msgid "Gender"
+msgstr "الجنس"
+
+#: .\careers\templates\formCareer.html:52 .\jobs\templates\volunteer.html:47
+msgid "Male"
+msgstr "ذكر"
+
+#: .\careers\templates\formCareer.html:53 .\jobs\templates\volunteer.html:48
+msgid "Female"
+msgstr "انثى"
+
+#: .\careers\templates\formCareer.html:57 .\jobs\templates\contact.html:44
+#: .\jobs\templates\volunteer.html:52
+msgid "Email"
+msgstr "البريد الالكتروني"
+
+#: .\careers\templates\formCareer.html:62 .\jobs\templates\contact.html:49
+#: .\jobs\templates\contact.html:84 .\jobs\templates\donate.html:44
+#: .\jobs\templates\volunteer.html:57
+msgid "Phone Number"
+msgstr "رقم الهاتف"
+
+#: .\careers\templates\formCareer.html:67 .\jobs\templates\volunteer.html:62
+msgid "Goverment"
+msgstr "المحافظة"
+
+#: .\careers\templates\formCareer.html:69 .\jobs\templates\volunteer.html:64
+msgid "Baghdad"
+msgstr "بغداد"
+
+#: .\careers\templates\formCareer.html:70 .\jobs\templates\volunteer.html:65
+msgid "Mousl"
+msgstr "الموصل"
+
+#: .\careers\templates\formCareer.html:71 .\jobs\templates\volunteer.html:66
+msgid "Erbil"
+msgstr "اربيل"
+
+#: .\careers\templates\formCareer.html:72 .\jobs\templates\volunteer.html:67
+msgid "Anbar"
+msgstr "الانبار"
+
+#: .\careers\templates\formCareer.html:73 .\jobs\templates\volunteer.html:68
+msgid "Babylon"
+msgstr "بابل"
+
+#: .\careers\templates\formCareer.html:74 .\jobs\templates\volunteer.html:69
+msgid "Basra"
+msgstr "البصرة"
+
+#: .\careers\templates\formCareer.html:75 .\jobs\templates\volunteer.html:70
+msgid "Dhi Qar"
+msgstr "ذي قار"
+
+#: .\careers\templates\formCareer.html:76 .\jobs\templates\volunteer.html:71
+msgid "Diyala"
+msgstr "ديالى"
+
+#: .\careers\templates\formCareer.html:77 .\jobs\templates\volunteer.html:72
+msgid "Dohuk"
+msgstr "دهوك"
+
+#: .\careers\templates\formCareer.html:78 .\jobs\templates\volunteer.html:73
+msgid "Karbala"
+msgstr "كربلا"
+
+#: .\careers\templates\formCareer.html:79 .\jobs\templates\volunteer.html:74
+msgid "KirKuk"
+msgstr "كركوك"
+
+#: .\careers\templates\formCareer.html:80 .\jobs\templates\volunteer.html:75
+msgid "Maysan"
+msgstr "ميسان"
+
+#: .\careers\templates\formCareer.html:81 .\jobs\templates\volunteer.html:76
+msgid "Najaf"
+msgstr "النجف"
+
+#: .\careers\templates\formCareer.html:82
+msgid "Qaisiyah"
+msgstr ""
+
+#: .\careers\templates\formCareer.html:83 .\jobs\templates\volunteer.html:77
+msgid "Salahaddin"
+msgstr "صلاح الدين"
+
+#: .\careers\templates\formCareer.html:84 .\jobs\templates\volunteer.html:78
+msgid "Sulaymaniyah"
+msgstr "سليمانية"
+
+#: .\careers\templates\formCareer.html:85 .\jobs\templates\volunteer.html:79
+msgid "Wasit"
+msgstr "واسط"
+
+#: .\careers\templates\formCareer.html:90 .\jobs\templates\volunteer.html:84
+msgid "Address"
+msgstr "العنوان"
+
+#: .\careers\templates\formCareer.html:94 .\jobs\templates\volunteer.html:88
+msgid "Upload your CV:"
+msgstr "حمل سيرتك الذاتية:"
+
+#: .\careers\templates\formCareer.html:99 .\jobs\templates\volunteer.html:93
+msgid "Select Language"
+msgstr "اختار اللغة"
+
+#: .\careers\templates\formCareer.html:143 .\jobs\templates\volunteer.html:137
+msgid "Kurdish"
+msgstr "كردي"
+
+#: .\careers\templates\formCareer.html:151 .\jobs\templates\volunteer.html:145
+msgid "Cover Letter"
+msgstr "رسالة تعريفية"
+
+#: .\careers\templates\formCareer.html:157 .\jobs\templates\contact.html:69
+#: .\jobs\templates\volunteer.html:151
+msgid "Submit"
+msgstr "تقديم"
+
+#: .\jobs\templates\about.html:15
+msgid "AIFRD Non-Governmental Organization"
+msgstr "منظمة غير الحكومية AIFRD"
+
+#: .\jobs\templates\about.html:73
+msgid "The goals of AIFRD"
+msgstr "AIFRD أهداف"
+
+#: .\jobs\templates\about.html:77
+msgid ""
+"The Foundation works on community awareness projects for the purpose of  "
+"advancing the community and combating extremist ideas."
+msgstr ""
+"تعمل المؤسسة على مشاريع توعية مجتمعية بهدف النهوض بالمجتمع ومكافحة الأفكار "
+"المتطرفة."
+
+#: .\jobs\templates\about.html:80
+msgid ""
+"The Foundation seeks to alleviate cases of  persecution and injustice "
+"against aggrieved citizens and help them restore their rights."
+msgstr ""
+"تسعى المؤسسة إلى التخفيف من حالات الاضطهاد والظلم بحق المواطنين المظلومين "
+"ومساعدتهم على استعادة حقوقهم."
+
+#: .\jobs\templates\about.html:83
+msgid ""
+"Contribute to achieving societal solidarity  among all segments of society, "
+"especially  minorities."
+msgstr ""
+"المساهمة في تحقيق التضامن المجتمعي بين جميع شرائح المجتمع وخاصة الأقليات."
+
+#: .\jobs\templates\about.html:86
+msgid ""
+"Work to secure the emergency response to the displaced and the displaced at "
+"any time  by implementing rapid interventions in the field."
+msgstr ""
+"العمل على تأمين الاستجابة الطارئة للنازحين والنازحين في أي وقت من خلال تنفيذ "
+"التدخلات السريعة في الميدان."
+
+#: .\jobs\templates\about.html:89
+msgid ""
+"Working to promote and build peaceful coexistence between different "
+"nationalities, religions and sects, reject violence and sectarianism, and "
+"spread peace."
+msgstr ""
+"العمل على تعزيز ووبناء التعايش السلمي بين مختلف القوميات والأديان والمذاهب "
+"ونبذ العنف والطائفية ونشر السلام"
+
+#: .\jobs\templates\about.html:92
+msgid ""
+"Spreading a culture of cooperation between society and the government to "
+"reach the  highest goals of transparency."
+msgstr ""
+"اشاعة ثقافة التعاون بين المجتمع والحكومة للوصول الى اعلى غايات الشفافية"
+
+#: .\jobs\templates\about.html:95
+msgid ""
+"Adopting renewable ideas and  encouraging the youth group to follow them and "
+"work to achieve them and to achieve the vision of the institution."
+msgstr ""
+".تبني االفكار المتجددة وتشجيع فئة الشباب بانتهاجها  والعمل على تحقيقها "
+"ولتحقيق رؤية المؤسسة"
+
+#: .\jobs\templates\about.html:125
+msgid "OUR VISION"
+msgstr "رؤيتنا"
+
+#: .\jobs\templates\about.html:127
+msgid ""
+" We aspire to a world in which the rights of children, as defined in the "
+"Convention on the Rights of the Child, are always respected. A world in "
+"which children can thrive in safe environments and become agents of change "
+"they wish to see in their lives."
+msgstr ""
+"إننا نتطلع إلى عالم تُحترم فيه دائ ًما حقوق األطفال ، علىالنحو المحدد في "
+"اتفاقية حقوق الطفل . عالم يستطيع فيهاألطفال االزدهار في بيئات آمنة ويصبحون "
+"عوامل تغييريرغبون في رؤيتها في حياتهم."
+
+#: .\jobs\templates\about.html:130 .\jobs\templates\about.html:148
+msgid "Read More"
+msgstr "اقرا المزيد"
+
+#: .\jobs\templates\about.html:143
+msgid "OUR MISSION"
+msgstr "هدفنا"
+
+#: .\jobs\templates\about.html:145
+msgid ""
+"Ashor Iraqi Foundation for Relief and Development, founded in 2014, is an "
+"independent, neutral and impartial Iraqi organisation committed to bringing "
+"meaningful and lasting change to the lives of children and youth, especially "
+"to those most exposed to risks. We strive to improve their well-being."
+msgstr ""
+"مؤسسة أشور العراقية للإغاثة والتنمية ، التي تأسست عام 2014 ، هي منظمة عراقية "
+"مستقلة ومحايدة وغير متحيزة ملتزمة بإحداث تغيير هادف ودائم في حياة الأطفال "
+"والشباب ، وخاصة أولئك الأكثر عرضة للمخاطر. نحن نسعى جاهدين لتحسين رفاهيتهم"
+
+#: .\jobs\templates\contact.html:13
+msgid "Become a vital part of AIFRD & make a real difference to lives of many!"
+msgstr ""
+"كن جزءًا حيويًا من مؤسسة أشور العراقية للإغاثة والتنمية وأحدث فرقًا حقيقيًا في "
+"حياة الكثيرين!"
+
+#: .\jobs\templates\contact.html:56
+msgid "Subject"
+msgstr "الموضوع"
+
+#: .\jobs\templates\contact.html:63
+msgid "Message"
+msgstr "الرسالة"
+
+#: .\jobs\templates\contact.html:81 .\jobs\templates\donate.html:39
+msgid "Keep touch with us"
+msgstr "ابق على تواصل معنا"
+
+#: .\jobs\templates\donate.html:19
+msgid "DONATE"
+msgstr "تبرع"
+
+#: .\jobs\templates\donate.html:30
+msgid "Spread The Love & Donate Now!"
+msgstr "انشر الحب وشارك!"
+
+#: .\jobs\templates\donate.html:31 .\jobs\templates\get_involved.html:13
+msgid "Join Us To Save The World Of Humanitarian And Feel Happy To Support"
+msgstr "انضم إلينا لإنقاذ عالم العمل الإنساني واشعر بالسعادة لتقديم الدعم"
+
+#: .\jobs\templates\get_involved.html:12
+msgid "Spread The Love & Get Involved!"
+msgstr "انشر الحب وشارك!"
+
+#: .\jobs\templates\get_involved.html:51
+msgid "Discover Our Careers"
+msgstr "اكتشف وظائفنا"
+
+#: .\jobs\templates\get_involved.html:71
+msgid "Join Us"
+msgstr "انضم إلينا"
+
+#: .\jobs\templates\index.html:46
+msgid "Since 2015"
+msgstr "2015 منذ "
+
+#: .\jobs\templates\index.html:79
+msgid "What We Are Doing"
+msgstr "ماذا نفعل"
+
+#: .\jobs\templates\index.html:100 .\jobs\templates\what_we_are_doing.html:49
+msgid "Explore"
+msgstr "استكشف"
+
+#: .\jobs\templates\index.html:108
+msgid "SEE MORE"
+msgstr "رؤية المزيد"
+
+#: .\jobs\templates\index.html:137
+msgid "JOIN US AS A VOLUNTEERS"
+msgstr "انظم معنا كمتطوع"
+
+#: .\jobs\templates\index.html:165
+msgid "OUR STORIS"
+msgstr "قصصنا"
+
+#: .\jobs\templates\index.html:169
+msgid "VIEW ALL STORIES"
+msgstr "عرض جميع القصص"
+
+#: .\jobs\templates\replay.html:18
+msgid "Thank You!"
+msgstr "شكرا لك!"
+
+#: .\jobs\templates\replay.html:24
+msgid ""
+"For choosing Ashor Iraqi Foundation For Relief And Development, We’ll get "
+"back to you about your order as soon as possible."
+msgstr ""
+"لاختيارم مؤسسة اشور للإغاثة والتنمية سوف نقوم بالرد عليك بشأن طلبك في اقرب وقت"
+
+#: .\jobs\templates\replay.html:26
+msgid "Having trouble?"
+msgstr "هل تواجه مشكلة؟"
+
+#: .\jobs\templates\replay.html:26
+msgid "Contact us"
+msgstr "اتصل الان"
+
+#: .\jobs\templates\replay.html:32
+msgid "back to home page"
+msgstr "العودة الى الصفحة الرئيسية"
+
+#: .\jobs\templates\vision_mission_value.html:14
+msgid "VISSION & MISSION"
+msgstr "الرؤية والهدف"
+
+#: .\jobs\templates\vision_mission_value.html:34
+msgid "Vision"
+msgstr "الرؤية"
+
+#: .\jobs\templates\vision_mission_value.html:48
+msgid "Mission"
+msgstr "الهدف"
+
+#: .\jobs\templates\volunteer.html:122
+msgid "Arabi"
+msgstr "العربية"
+
+#: .\jobs\templates\what_we_are_doing.html:33
+msgid ""
+"Ashor Iraqi Foundation for Relief and Development responds to the world’s "
+"worst humanitarian crises and helps people to survive and rebuild their "
+"lives. AIFRD offers life-saving care and life-changing assistance to IDPs "
+"and returnee that effected to flee from war or disaster. AIFRD restores "
+"safety, dignity and hope to millions who are uprooted by conflict or "
+"disaster. AIFRD leads the way from harm to home."
+msgstr ""
+"تستجيب مؤسسة أشور العراقية للإغاثة والتنمية لأسوأ الأزمات الإنسانية في "
+"العالم وتساعد الناس على البقاء على قيد الحياة وإعادة بناء حياتهم.  الرعاية "
+"المنقذة للحياة والمساعدة في تغيير الحياة للنازحين والعائدين الذين اضطروا "
+"للفرار من الحرب أو الكوارث AIFRD تقدم السلامة والكرامة والأمل للملايين الذين "
+"اقتلعهم الصراع أو الكوارث ِِِAIFRD يعيد  "
+
+#~ msgid "Read more"
+#~ msgstr "اقرا المزيد"
+
+#~ msgid "Job Shift"
+#~ msgstr "تناوب العمل"
+
+#~ msgid "WHAT WE ARE DOING "
+#~ msgstr "ماذا نفعل"

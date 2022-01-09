@@ -2,12 +2,13 @@ from email.message import EmailMessage
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from rest_framework import generics, permissions
-from .models import Application, Slider,  VisionMissionValue, Volunteer, WhatWeAreDoingBackgroundImage, WhoWeAre, Index, Donate, WhatWeAreDoingDetail, About, GetInvolved
-from .serializers import ApplicationSerializer, SliderSerializer, VisionMissionValueSerializer, WhoWeAreSerializer, VolunteerSerializer, IndexSerializer, DonateSerializer, WhatWeAreDoingDetailSerializer, AboutSerializer, GetInvolvedSerializer
+from .models import Application, Replay, Slider,  VisionMissionValue, Volunteer, WhatWeAreDoingBackgroundImage, WhoWeAre, Index, Donate, WhatWeAreDoingDetail, About, GetInvolved
+from .serializers import ApplicationSerializer, ReplaySerializer, SliderSerializer, VisionMissionValueSerializer, WhoWeAreSerializer, VolunteerSerializer, IndexSerializer, DonateSerializer, WhatWeAreDoingDetailSerializer, AboutSerializer, GetInvolvedSerializer
 from django.http import HttpRequest
 from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
 from .filters import WhatWeAreDoingDetailFilter
 from django.core.paginator import Paginator
+from django.utils.translation import get_language, activate
 
 from blogs.models import StoryDetail
 from django.core.mail import send_mail,  EmailMessage
@@ -79,7 +80,17 @@ def volunteer(request):
                       'data': serializer_class.data,
                   }
                   )
+def reply(request):
+    """Renders the create replay page."""
+    assert isinstance(request, HttpRequest)
+    queryset = Replay.objects.all()
+    serializer_class = ReplaySerializer(queryset, many=True)
 
+    return render(request, 'reply.html',
+                  {
+                      'data': serializer_class.data,
+                  }
+                  )
 
 def index(request):
     assert isinstance(request, HttpRequest)
@@ -107,6 +118,7 @@ def index(request):
         'stories': page_obj_story,
     }
     return render(request, 'index.html', context)
+
 
 
 def donate(request):
@@ -146,9 +158,11 @@ def contact(request):
 
         if subject and message and email:
             try:
-                send_mail(data['subject'], message, from_email= 'representative@aifrd.org',recipient_list= ['contact@aifrd.org'],  fail_silently=False)
+                send_mail(data['subject'], message, from_email= 'info@ashuor.org',recipient_list= ['contact@ashuor.org'],  fail_silently=False)
 
             except  Exception as error:
+                print("error")
+                print(error)
                 return HttpResponse('Invalid header found.')
     return render(request, 'contact.html')
 
@@ -210,13 +224,13 @@ def volunteerForm(request):
             email = EmailMessage(
                               data['name'],    
                               message,
-                              'representative@aifrd.org', ['volunteer@aifrd.org'],)
+                              'info@ashuor.org', ['volunteer@ashuor.org'],)
                           
             if request.FILES:
                             uploaded_file = request.FILES['upload_cv'] # file is the name value which you have provided in form for file field
                             email.attach(uploaded_file.name, uploaded_file.read(), uploaded_file.content_type)
                             email.send()
-            #     send_mail(data['carrer_name'], message, from_email= 'representative@aifrd.org',recipient_list= ['hr@aifrd.org'],  fail_silently=False)
+            #     send_mail(data['carrer_name'], message, from_email= 'info@ashuor.org',recipient_list= ['hr@aifrd.org'],  fail_silently=False)
             #     send_mail.attach(message. attach.read(), )
             #     send_mail.send()
             # except  Exception as error:
@@ -224,6 +238,12 @@ def volunteerForm(request):
     return render(request, 'volunteer.html')
 
 
+def translate(language):
+    cur_language = get_language()
+    try:
+        activate(language)
+    finally:
+        activate(cur_language)
 
 def what_we_are_doing(request):
     """Renders the create what_we_are_doing page."""

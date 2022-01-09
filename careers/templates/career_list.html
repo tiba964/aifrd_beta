@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block body %}
-
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
       <!-- Page Banner Section -->
       <section class="page-banner">
         {% for i in data %}
@@ -10,17 +11,18 @@
     
         <div class="auto-container">
           <h3>
-           CAREERS
+          {% trans "CAREERS" %}
+           
           </h3>
         </div>
 
         <div class="breadcrumb-box">
           <div class="auto-container">
             <ul class="bread-crumb clearfix">
-              <li><a href="{% url 'jobs:index' %}" style="font-size: 12px">HOME</a></li>
+              <li><a href="{% url 'jobs:index' %}" style="font-size: 12px">{% trans "HOME" %}</a></li>
               <li>
                 <a href="{% url 'jobs:get_involved' %}" style="font-size: 12px"
-                  >GET INVOLVED</a
+                  >{% trans "GET INVOLVED" %}</a
                 >
               </li>
               <!-- <li class="active" style="font-size: 12px">CAREERS</li> -->
@@ -41,7 +43,7 @@
           <h3  style="color:#426E94;text-align:center; padding-top:0px; padding-bottom: 50px; background-color:white;">{{message}}</h3>
 
          <div class="lower-box story-details">
-                                <h2 style="font-size:20px; padding-top:0px;"> latest careers</h2>
+                                <h2 style="font-size:20px; padding-top:0px;"> {% trans "latest careers" %}</h2>
                                 <div class="info-box clearfix" style="    margin-bottom: 15px;">
                                
                                         
@@ -63,13 +65,17 @@
                       </a>
                     </div> -->
                     <div  class="careerDes">
-                    <h4 class="name" style="font-size:20px; padding-bottom:10px;">{{career}}</h4>
+                    <h4 class="name" style="font-size:20px; padding-bottom:10px;">  {% if LANGUAGE_CODE == 'en' %} {{career.title}}
+                      {% elif LANGUAGE_CODE == 'ar' %} {{career.title_ar}} {% endif %}  </h4>
                  
-                    <p> {{career.description}}</p> 
+                    <p> {% if LANGUAGE_CODE == 'en' %} {{career.description}}
+                      {% elif LANGUAGE_CODE == 'ar' %} {{career.description_ar}} {% endif %}</p> 
                  
                     <div class="post-info">
-                      {{career.location}} , {{career.governorate}} &ensp;|&ensp; {{career.posted|date:'d M o'}}  &ensp;
-                          <a href="{% url 'careers:career_detail' career.id %}" class="reply-btn" style="font-weight: bold;">Read more</a>
+                      {% if LANGUAGE_CODE == 'en' %} {{career.location}}
+                      {% elif LANGUAGE_CODE == 'ar' %} {{career.location_ar}} {% endif %} ,   {% if LANGUAGE_CODE == 'en' %} {{career.governorate}}
+                      {% elif LANGUAGE_CODE == 'ar' %} {{career.governorate_ar}} {% endif %}  &ensp;|&ensp; {{career.posted|date:'d M o'}}  &ensp;
+                          <a href="{% url 'careers:career_detail' career.id %}" class="reply-btn" style="font-weight: bold;">{% trans "READ MORE" %}</a>
                     </div>
                     {% endfor %}
                   </div>

@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block body %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 <!-- Page Banner Section -->
 <section class="page-banner">
   {% for i in data %}
@@ -7,16 +9,16 @@
 
   {% endfor %}
   <div class="auto-container">
-    <h2>Spread The Love & Get Involved!</h2>
-    <div class="text">Join Us To Save The World Of Humanitarian And Feel Happy To Support</div>
+    <h2>{% trans "Spread The Love & Get Involved!" %}</h2>
+    <div class="text">{% trans "Join Us To Save The World Of Humanitarian And Feel Happy To Support" %}</div>
 
   </div>
 
   <div class="breadcrumb-box">
     <div class="auto-container">
       <ul class="bread-crumb clearfix">
-        <li><a href="{% url 'jobs:index' %}" style="font-size: 12px">HOME</a></li>
-        <li class="active">GET INVOLVED</li>
+        <li><a class="dirBanner" href="{% url 'jobs:index' %}" style="font-size: 12px">{% trans "HOME" %}</a></li>
+        <li class="active">{% trans "GET INVOLVED" %}</li>
       </ul>
     </div>
   </div>
@@ -41,11 +43,12 @@
                 </a></figure>
             </div>
             <div class="lower-content">
-              <h3><a href="{% url 'careers:career_list' %}">CAREERS</a></h3>
-              <div class="text">{{ i.text_careers_getinvolved }} </div>
+              <h3><a href="{% url 'careers:career_list' %}">{% trans "CAREERS" %}</a></h3>
+              <div class="text">{% if LANGUAGE_CODE == 'en' %}{{i.text_careers_getinvolved}}
+                {% elif LANGUAGE_CODE == 'ar' %}{{i.text_careers_getinvolved_ar}}{% endif %} </div>
 
               <div class="link-box"><a href="{% url 'careers:career_list' %}" class="theme-btn btn-style-four"><span
-                    class="btn-title">Discover Our Careers</span></a></div>
+                    class="btn-title">{% trans "Discover Our Careers" %}</span></a></div>
             </div>
           </div>
         </div>
@@ -60,11 +63,12 @@
                 </a></figure>
             </div>
             <div class="lower-content">
-              <h3><a href="{% url 'jobs:volunteer' %}">JOIN US AS VOLUNTEER</a></h3>
-              <div class="text">{{ i.text_joinus_getinvolved}} </div>
+              <h3><a href="{% url 'jobs:volunteer' %}">{% trans "JOIN US AS VOLUNTEER" %}</a></h3>
+              <div class="text">{% if LANGUAGE_CODE == 'en' %}{{i.text_joinus_getinvolved}}
+                {% elif LANGUAGE_CODE == 'ar' %}{{i.text_joinus_getinvolved_ar}}{% endif %} </div>
               {% endfor %}
               <div class="link-box"><a href="{% url 'jobs:volunteer' %}" class="theme-btn btn-style-four"><span
-                    class="btn-title">Join Us</span></a></div>
+                    class="btn-title">{% trans "Join Us" %}</span></a></div>
             </div>
           </div>
         </div>

@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block body %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
      <!-- Page Banner Section -->
      <section class="page-banner">
       {% for i in data %}
@@ -8,22 +10,22 @@
       {% endfor %}
 
       <div class="auto-container">
-        <h3>Become a vital part of Ashor Iraqi Foundation for Relief and Development & make a real difference to lives of many!</h3>
+        <h3>{% trans "Become a vital part of Ashor Iraqi Foundation for Relief and Development & make a real difference to lives of many!" %}</h3>
         
       </div>
 
       <div class="breadcrumb-box">
         <div class="auto-container">
           <ul class="bread-crumb clearfix">
-            <li><a href="{% url 'jobs:index' %}" style="font-size: 12px">HOME</a></li>
-            <li><a href="{% url 'jobs:get_involved' %}" style="font-size:12px">GET INVOLVED</a></li>
+            <li><a class="dirBanner" href="{% url 'jobs:index' %}" style="font-size: 12px">{% trans "HOME" %}</a></li>
+            <li><a href="{% url 'jobs:get_involved' %}" style="font-size:12px">{% trans "GET INVOLVED" %}</a></li>
             <!-- <li class="active" style="font-size:12px">VOLUNTEER</li> -->
           </ul>
         </div>
       </div>
     </section>
     <!--End Banner Section -->
-    <section class="contact-section contact-page" style="padding-left: 20px">
+    <section class="contact-section contact-page" style="padding-left: 20px; padding-right: 20px;">
       <div class="auto-container">
         <div class="row clearfix justify-content-md-center">
           <!--Form Column-->
@@ -36,60 +38,59 @@
                   <div class="row clearfix">
                  
                     <div class="form-group col-md-6 col-sm-12">
-                      <div class="field-label">Fullname</div>
+                      <div class="field-label">{% trans "Fullname" %}</div>
                       <input type="text" name="full_name" value="" placeholder="" required />
                     </div>
                     <div class="form-group col-md-6 col-sm-12">
-                      <div class="field-label">Gender</div>
+                      <div class="field-label">{% trans "Gender" %}</div>
                       <select class="custom-select-box" name="gender">
-                        <option>Male</option>
-                        <option>Female</option>
+                        <option>{% trans "Male" %}</option>
+                        <option>{% trans "Female" %}</option>
                       </select>
                     </div>
                     <div class="form-group col-md-6 col-sm-12">
-                      <div class="field-label">Email</div>
+                      <div class="field-label">{% trans "Email" %}</div>
                       <input type="email" name="email" value="" placeholder="" required />
                     </div>
 
                     <div class="form-group col-md-6 col-sm-12">
-                      <div class="field-label">Phone Number</div>
+                      <div class="field-label">{% trans "Phone Number" %}</div>
                       <input type="text" name="phone" value="" placeholder="" />
                     </div>
 
                     <div class="form-group col-md-6 col-sm-12">
-                      <div class="field-label">Goverment</div>
+                      <div class="field-label">{% trans "Goverment" %}</div>
                       <select class="custom-select-box" name="region">
-                        <option>Baghdad</option>
-                        <option>Mousl</option>
-                        <option>Erbil</option>
-                        <option>Anbar</option>
-                        <option>Babylon</option>
-                        <option>Basra</option>
-                        <option>Dhi Qar</option>
-                        <option>Diyala</option>
-                        <option>Dohuk</option>
-                        <option>Karbala</option>
-                        <option>KirKuk</option>
-                        <option>Maysan</option>
-                        <option>Najaf</option>
-                        <option>Qaisiyah</option>
-                        <option>Salahaddin</option>
-                        <option>Sulaymaniyah</option>
-                        <option>Wasit</option>
+                        <option>{% trans "Baghdad" %}</option>
+                        <option>{% trans "Mousl" %}</option>
+                        <option>{% trans "Erbil" %}</option>
+                        <option>{% trans "Anbar" %}</option>
+                        <option>{% trans "Babylon" %}</option>
+                        <option>{% trans "Basra" %}</option>
+                        <option>{% trans "Dhi Qar" %}</option>
+                        <option>{% trans "Diyala" %}</option>
+                        <option>{% trans "Dohuk" %}</option>
+                        <option>{% trans "Karbala" %}</option>
+                        <option>{% trans "KirKuk" %}</option>
+                        <option>{% trans "Maysan" %}</option>
+                        <option>{% trans "Najaf" %}</option>
+                        <option>{% trans "Salahaddin" %}</option>
+                        <option>{% trans "Sulaymaniyah" %}</option>
+                        <option>{% trans "Wasit" %}</option>
                       </select>
                     </div>
 
                     <div class="form-group col-md-6 col-sm-12">
-                      <div class="field-label">Address</div>
+                      <div class="field-label">{% trans "Address" %}</div>
                       <input type="text" name="address" value="" placeholder="" required />
                     </div>
                     <div class="form-group form-group col-md-6 col-sm-12">
-                      <div class="field-label">Upload your CV:</div>
+                      <div class="field-label">{% trans "Upload your CV:" %}</div>
                       <input type="file" name="upload_cv" style="color: blue" />
                     </div>
                    
                     <div class="form-group form-group col-md-6 col-sm-12">
-                      <div class="field-label">Select Language</div>
+                      <div class="field-label">{% trans "Select Language" %}</div>
                       <table>
                         <tr>
                           <td style="
@@ -103,7 +104,7 @@
                                   mdl-js-ripple-effect
                                 " for="checkbox1">
                               <input type="checkbox" id="checkbox1" class="mdl-checkbox__input" name="English" />
-                              <span class="mdl-checkbox__label">English</span>
+                              <span class="mdl-checkbox__label">{% trans "English" %}</span>
                             </label>
                           </td>
 
@@ -118,7 +119,7 @@
                                   mdl-js-ripple-effect
                                 " for="checkbox2">
                               <input type="checkbox" id="checkbox2" class="mdl-checkbox__input" name="Arabic" />
-                              <span class="mdl-checkbox__label">Arabic</span>
+                              <span class="mdl-checkbox__label">{% trans "Arabi" %}c</span>
                             </label>
                           </td>
 
@@ -133,7 +134,7 @@
                                   mdl-js-ripple-effect
                                 " for="checkbox3">
                               <input type="checkbox" id="checkbox3" class="mdl-checkbox__input" name="Kurdish" />
-                              <span class="mdl-checkbox__label">Kurdish</span>
+                              <span class="mdl-checkbox__label">{% trans "Kurdish" %}</span>
                             </label>
                           </td>
                         </tr>
@@ -141,13 +142,13 @@
                     </div>
 
                     <div class="form-group form-group col-md-12 col-sm-12">
-                      <div class="field-label">Cover Letter</div>
+                      <div class="field-label">{% trans "Cover Letter" %}</div>
                       <textarea name="cover_letter" placeholder=""></textarea>
                     </div>
                   </div>
                   <div class="btn-box" style="padding-top: 30px">
                     <button type="submit" class="theme-btn btn-style-one">
-                      <span class="btn-title">Submit</span>
+                      <span class="btn-title">{% trans "Submit" %}</span>
                     </button>
                   </div>
                 </form>

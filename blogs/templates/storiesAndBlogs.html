@@ -1,19 +1,21 @@
 {% extends 'base.html' %}
 {% block body %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
       <section class="page-banner">
         {% for i in data %}
         <div class="image-layer" style="background-image: url('{{i.bg_image_story_bloag}}')"></div>
       
         {% endfor %}
       <div class="auto-container">
-           <h2>STORIES & BLOGS</h2>
+           <h2>{% trans "STORIES & BLOGS" %}</h2>
          </div>
 
         <div class="breadcrumb-box">
           <div class="auto-container">
             <ul class="bread-crumb clearfix">
-              <li><a href="{% url 'jobs:index' %}">HOME</a></li>
-              <li class="active">STORIES & BLOGS</li>
+              <li><a class="dirBanner" href="{% url 'jobs:index' %}">{% trans "HOME" %}</a></li>
+              <li class="active">{% trans "STORIES & BLOGS" %}</li>
             </ul>
           </div>
         </div>
@@ -21,7 +23,7 @@
       <!--End Banner Section -->
     
       <section class="causes-section alternate">
-        <div class="auto-container">
+        <div class="auto-container" style="padding-top:30px">
       
          
                       
@@ -41,9 +43,10 @@
                           </div>
                       </div>
                       <div class="lower-content">
-                          <h3><a href="{% url 'blogs:story' %}">OUR STORIES</a></h3>
+                          <h3><a href="{% url 'blogs:story' %}">{% trans "OUR STORIES" %}</a></h3>
                           {% for i in data %}
-                          <div class="text">{{i.text_bg_stories}}</div>
+                          <div class="text"> {% if LANGUAGE_CODE == 'en' %} {{ i.text_bg_stories }}
+                            {% elif LANGUAGE_CODE == 'ar' %}  {{ i.text_bg_stories_ar }} {% endif %}</div>
                           {% endfor %}                          </div>
                   </div>
               </div>
@@ -62,9 +65,10 @@
                           </div>
                       </div>
                       <div class="lower-content">
-                          <h3><a href="{% url 'blogs:blogs' %}"  height="250px"  >OUR BLOGS</a></h3>
+                          <h3><a href="{% url 'blogs:blogs' %}"  height="250px"  >{% trans "OUR BLOGS" %}</a></h3>
                           {% for i in data %}
-                          <div class="text"> {{i.text_bg_blogs}} </div>
+                          <div class="text">{% if LANGUAGE_CODE == 'en' %} {{ i.text_bg_blogs }}
+                            {% elif LANGUAGE_CODE == 'ar' %}  {{ i.text_bg_blogs_ar }} {% endif %}</div>
                           {% endfor %} </div>                          </div>
                   </div>
               </div>

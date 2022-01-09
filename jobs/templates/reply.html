@@ -1,0 +1,49 @@
+{% extends 'base2.html' %}
+{% block body %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<!-- End Main Header -->
+
+
+
+
+  <!--Featured Blocks-->
+  <div class="featured-blocks vission_mission_section">
+    <div class="row clearfix">
+    
+      <!--Featured Block-->
+      <div class="featured-block col-lg-12 col-md-12 col-sm-12">
+        <div class="inner-box">
+          <div class="iconss">
+            <h3 style="text-align: center; padding-top: 50px;" class="replay-text-arabic"> {% trans "Thank You!" %}</h3>
+            <div style="text-align: center;" class="icon">
+              <span  class="flaticon-email-1"></span>
+            </div>
+          
+            <div style="text-align: center;" class="replay-text-arabic-para">
+              {% trans "For choosing Ashor Iraqi Foundation For Relief And Development, We’ll get back to you about your order as soon as possible." %}
+              <p style="text-align: center; ">
+                {% trans "Having trouble?" %} <a href="{% url 'jobs:contact' %}">{% trans "Contact us" %}</a>
+              </p>
+            </div>
+            <div class="donate-link" style="text-align: center; padding-top: 30px;">
+                <a href="{% url 'jobs:index' %}" class="theme-btn btn-style-one"
+                ><span class="btn-title">{% trans "back to home page" %}</span></a
+              >
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+</section>
+
+{% endblock body %}
+
+
+
+
+   

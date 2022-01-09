@@ -1,21 +1,23 @@
 {% extends 'base.html' %}
 {% block body %}
-
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
     <!-- Page Banner Section -->
     <section class="page-banner">
       <div class="auto-container">
-        <h1>{{career}}</h1>
+        <h1>  {% if LANGUAGE_CODE == 'en' %} {{career.title}}
+          {% elif LANGUAGE_CODE == 'ar' %} {{career.title_ar}} {% endif %}</h1>
       </div>
 
       <div class="breadcrumb-box">
         <div class="auto-container">
           <ul class="bread-crumb clearfix">
-            <li><a href="{% url 'jobs:index' %}" style="font-size: 12px">HOME</a></li>
+           
             <li>
-              <a href="{% url 'jobs:get_involved' %}" style="font-size: 12px">GET INVOLVED</a>
+              <a href="{% url 'jobs:get_involved' %}" style="font-size: 12px">{% trans "GET INVOLVED" %}</a>
             </li>
             <li>
-              <a href="{% url 'careers:career_list' %}" style="font-size: 12px">CAREERS</a>
+              <a href="{% url 'careers:career_list' %}" style="font-size: 12px">{% trans "CAREERS" %}</a>
             </li>
           </ul>
         </div>
@@ -34,78 +36,81 @@
               <div class="event-details">
                 <div class="lower-box">
                   <div class="post-content">
-                    <h3 style="font-size:20px; padding-top: 10px;padding-bottom: 30px;">The Description</h3>                    <p> {{career.description}} </p>
+                    <h3 style="font-size:20px; padding-top: 10px;padding-bottom: 30px;">{% trans "The Description" %}</h3>       <p>    {% if LANGUAGE_CODE == 'en' %} {{career.description}}
+                    {% elif LANGUAGE_CODE == 'ar' %} {{career.description_ar}} {% endif %}           </p>
                   </div>
-                  <h2 style="font-size:20px;padding-bottom:20px;padding-top: 20px;">Job Information</h2>
+                  <h2  class= "h-style-arabic" style="font-size:20px;padding-bottom:20px;padding-top: 20px;">{% trans "Job Information" %}</h2>
                   <div class=" clearfix">
                     <div class="cause-info">
                       <table class="table table-bordered">
-                        <tbody>
+                        <tbody  class= "h-style-arabic">
                           <tr>
-                            <th scope="row">Contract Duration</th>
+                            <th  scope="row"> {% trans "Contract Duration" %} </h1></th>
                             <td>{{career.contract_duration}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Governorate</th>
-                            <td>{{career.governorate}}</td>
+                            <th scope="row">{% trans "Governorate" %}</th>
+                            <td>  {% if LANGUAGE_CODE == 'en' %} {{career.governorate}}
+                              {% elif LANGUAGE_CODE == 'ar' %} {{career.governorate_ar}} {% endif %}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Working Hours</th>
-                            <td colspan="2">{{career.job_type}}</td>
+                            <th scope="row">{% trans "Working Hours" %}</th>
+                            <td colspan="2"> {{career.working_hours}}</td>
+                          </tr>
+                        
+                          <tr>
+                            <th scope="row">{% trans "Location" %}</th>
+                            <td> {% if LANGUAGE_CODE == 'en' %} {{career.location}}
+                              {% elif LANGUAGE_CODE == 'ar' %} {{career.location_ar}} {% endif %}</td>
+                          </tr>
                           </tr>
                           <tr>
-                            <th scope="row">Job Shift</th>
-                            <td colspan="2">{{career.job_shift}}</td>
-                          <tr>
-                            <th scope="row">Location</th>
-                            <td>{{career.location}}</td>
-                          </tr>
-                          </tr>
-                          <tr>
-                            <th scope="row">Posted</th>
+                            <th scope="row">{% trans "Posted" %}</th>
                             <td colspan="2">{{career.posted|date:'d M o'}}</td>
                           </tr>
                         </tbody>
                       </table>
                     </div>
                   </div>
-                  <h2 style="font-size:20px;padding-bottom:20px;padding-top: 20px;">Requirements</h2>
+                  <h2  class= "h-style-arabic" style="font-size:20px;padding-bottom:20px;padding-top: 20px;">{% trans "Requirements" %}</h2>
                   <div class=" clearfix">
                     <div class="cause-info">
                       <table class="table table-bordered">
-                        <tbody>
+                        <tbody  class= "h-style-arabic">
                           <tr>
-                            <th scope="row">Minimum Education </th>
-                            <td>{{career.minimum_education}}</td>
+                            <th scope="row">{% trans "Minimum Education" %} </th>
+                            <td>{% if LANGUAGE_CODE == 'en' %} {{career.minimum_education}}
+                              {% elif LANGUAGE_CODE == 'ar' %} {{career.minimum_education_ar}} {% endif %}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Minimum Experience</th>
+                            <th scope="row">{% trans "Minimum Experience" %}</th>
                             <td>{{career.minimum_experience}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Required Travel</th>
-                            <td colspan="2">{{career.required_travel}}</td>
+                            <th scope="row">{% trans "Required Travel" %}</th>
+                            <td colspan="2">{% if LANGUAGE_CODE == 'en' %} {{career.required_travel}}
+                              {% elif LANGUAGE_CODE == 'ar' %} {{career.required_travel_ar}} {% endif %}</td>
                           </tr>
 
                         </tbody>
                       </table>
                     </div>
                   </div>
-                  <h2 style="font-size:20px;padding-bottom:20px;padding-top: 20px;"> Job Status </h2>
+                  <h2  class= "h-style-arabic" style="font-size:20px;padding-bottom:20px;padding-top: 20px;">{% trans "Job Status" %} </h2>
                   <div class=" clearfix">
                     <div class="cause-info">
                       <table class="table table-bordered">
-                        <tbody>
+                        <tbody  class= "h-style-arabic">
                           <tr>
-                            <th scope="row">No Of Jobs </th>
+                            <th scope="row">{% trans "No Of Jobs" %} </th>
                             <td>{{career.no_of_jobs}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Published Date</th>
+                            <th scope="row">{% trans "Published Date" %}</th>
                             <td>{{career.puplished|date:'d M o'}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Deadline Date</th>
+                            <th scope="row">{% trans "Deadline Date" %}</th>
                             <td colspan="2">{{career.deadline|date:'d M o'}}</td>
                           </tr>
 
@@ -131,49 +136,40 @@
               <!-- Category Widget -->
               <div class="sidebar-widget category-widget">
                 <div class="widget-inner">
-                  <h3 style="font-size:20px">Role and responsibilities</h3>
+                  <h3  class= "h-style-arabic" style="font-size:20px">{% trans "Role and responsibilities" %}</h3>
                   <div class="widget-content">
                     <ul>
                       <li class="active"> <a class="clearfix" 
-                            >{{career.role_1}}</a></li>
+                            >{% if LANGUAGE_CODE == 'en' %} {{career.role_1}}
+                            {% elif LANGUAGE_CODE == 'ar' %} {{career.role_1_ar}} {% endif %} </a></li>
                       <li> <a class="clearfix" 
-                            >{{career.role_2}}</a></li>
+                            >{% if LANGUAGE_CODE == 'en' %} {{career.role_2}}
+                            {% elif LANGUAGE_CODE == 'ar' %} {{career.role_2_ar}} {% endif %} </a></li>
                       <li> <a class="clearfix" 
-                            >{{career.role_3}}</a></li>
+                            >{% if LANGUAGE_CODE == 'en' %} {{career.role_3}}
+                            {% elif LANGUAGE_CODE == 'ar' %} {{career.role_3_ar}} {% endif %} </a></li>
                       <li> <a class="clearfix" 
-                            >{{career.role_4}}</a></li>
+                            >{% if LANGUAGE_CODE == 'en' %} {{career.role_4}}
+                            {% elif LANGUAGE_CODE == 'ar' %} {{career.role_4_ar}} {% endif %} </a></li>
                       <li> <a class="clearfix" 
-                            >{{career.role_5}}</a></li>
+                            >{% if LANGUAGE_CODE == 'en' %} {{career.role_5}}
+                            {% elif LANGUAGE_CODE == 'ar' %} {{career.role_5_ar}} {% endif %} </a></li>
                       <li> <a class="clearfix" 
-                            >{{career.role_6}}</a></li>
+                            >{% if LANGUAGE_CODE == 'en' %} {{career.role_6}}
+                            {% elif LANGUAGE_CODE == 'ar' %} {{career.role_6_ar}} {% endif %} </a></li>
                       <li> <a class="clearfix" 
-                            >{{career.role_7}}</a></li>
+                            >{% if LANGUAGE_CODE == 'en' %} {{career.role_7}}
+                            {% elif LANGUAGE_CODE == 'ar' %} {{career.role_7_ar}} {% endif %} </a></li>
                       <li> <a class="clearfix" 
-                            >{{career.role_8}}</a></li>
+                            >{% if LANGUAGE_CODE == 'en' %} {{career.role_8}}
+                            {% elif LANGUAGE_CODE == 'ar' %} {{career.role_8_ar}} {% endif %} </a></li>
                       <li> <a class="clearfix" 
-                            >{{career.role_9}}</a></li>
+                            >{% if LANGUAGE_CODE == 'en' %} {{career.role_9}}
+                            {% elif LANGUAGE_CODE == 'ar' %} {{career.role_9_ar}} {% endif %} </a></li>
                       <li> <a class="clearfix" 
-                            >{{career.role_10}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.role_11}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.role_12}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.role_13}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.role_14}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.role_15}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.role_16}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.role_17}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.role_18}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.role_19}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.role_20}}</a></li>
+                            >{% if LANGUAGE_CODE == 'en' %} {{career.role_10}}
+                            {% elif LANGUAGE_CODE == 'ar' %} {{career.role_10_ar}} {% endif %} </a></li>
+                     
                       </ul>
                   </div>
                 </div>
@@ -182,49 +178,40 @@
               <!-- Category Widget -->
               <div class="sidebar-widget category-widget">
                 <div class="widget-inner">
-                  <h3 style="font-size:20px">Qualifications & Preferred Skills</h3>
+                  <h3 style="font-size:20px">{% trans "Qualifications & Preferred Skills" %}</h3>
                   <div class="widget-content">
                     <ul>
                       <li class="active"> <a class="clearfix" 
-                        >{{career.skill_1}}</a></li>
+                        >{% if LANGUAGE_CODE == 'en' %} {{career.skill_1}}
+                        {% elif LANGUAGE_CODE == 'ar' %} {{career.skill_1_ar}} {% endif %} </a></li>
                       <li > <a class="clearfix" 
-                        >{{career.skill_2}}</a></li>
+                        >{% if LANGUAGE_CODE == 'en' %} {{career.skill_2}}
+                        {% elif LANGUAGE_CODE == 'ar' %} {{career.skill_2_ar}} {% endif %} </a></li>
                       <li> <a class="clearfix" 
-                        >{{career.skill_3}}</a></li>
+                        >{% if LANGUAGE_CODE == 'en' %} {{career.skill_3}}
+                        {% elif LANGUAGE_CODE == 'ar' %} {{career.skill_3_ar}} {% endif %} </a></li>
                       <li> <a class="clearfix" 
-                            >{{career.skill_4}}</a></li>
+                            >{% if LANGUAGE_CODE == 'en' %} {{career.skill_4}}
+                            {% elif LANGUAGE_CODE == 'ar' %} {{career.skill_4_ar}} {% endif %} </a></li>
                       <li> <a class="clearfix" 
-                            >{{career.skill_5}}</a></li>
+                            >{% if LANGUAGE_CODE == 'en' %} {{career.skill_5}}
+                            {% elif LANGUAGE_CODE == 'ar' %} {{career.skill_5_ar}} {% endif %} </a></li>
                       <li> <a class="clearfix" 
-                            >{{career.skill_6}}</a></li>
+                            >{% if LANGUAGE_CODE == 'en' %} {{career.skill_6}}
+                            {% elif LANGUAGE_CODE == 'ar' %} {{career.skill_6_ar}} {% endif %} </a></li>
                       <li> <a class="clearfix" 
-                            >{{career.skill_7}}</a></li>
+                            >{% if LANGUAGE_CODE == 'en' %} {{career.skill_7}}
+                            {% elif LANGUAGE_CODE == 'ar' %} {{career.skill_7_ar}} {% endif %} </a></li>
                       <li> <a class="clearfix" 
-                            >{{career.skill_8}}</a></li>
+                            >{% if LANGUAGE_CODE == 'en' %} {{career.skill_8}}
+                            {% elif LANGUAGE_CODE == 'ar' %} {{career.skill_8_ar}} {% endif %} </a></li>
                       <li> <a class="clearfix" 
-                            >{{career.skill_9}}</a></li>
+                            >{% if LANGUAGE_CODE == 'en' %} {{career.skill_9}}
+                            {% elif LANGUAGE_CODE == 'ar' %} {{career.skill_9_ar}} {% endif %}</a></li>
                       <li> <a class="clearfix" 
-                            >{{career.skill_10}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.skill_11}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.skill_12}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.skill_13}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.skill_14}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.skill_15}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.skill_16}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.skill_17}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.skill_18}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.skill_19}}</a></li>
-                      <li> <a class="clearfix" 
-                            >{{career.skill_20}}</a></li>
+                            >{% if LANGUAGE_CODE == 'en' %} {{career.skill_10}}
+                            {% elif LANGUAGE_CODE == 'ar' %} {{career.skill_10_ar}} {% endif %}</a></li>
+                     
                       </ul>
                   </div>
                 </div>
@@ -232,7 +219,7 @@
             </aside>
           </div>
           <div class="link-box">
-            <a href="{% url 'careers:careerForm' career %}" class="theme-btn btn-style-two"><span class="btn-title">Apply Now</span></a>
+            <a href="{% url 'careers:careerForm' career %}" class="theme-btn btn-style-two"><span class="btn-title">{% trans "Apply Now" %}</span></a>
           </div>
           <!--End Sidebar Side-->
         </div>

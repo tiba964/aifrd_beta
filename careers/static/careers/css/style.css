@@ -1647,8 +1647,8 @@
 	text-align:center;
 	font-size:16px;
 	line-height:32px;
-	color:black;
-	background:rgba(255,255,255,0.10);
+	color:white;
+	background:#3D7B0C;
 	cursor:pointer;
 	border-radius:2px;
 	-webkit-transition: all 500ms ease;
@@ -1679,6 +1679,7 @@
 .mobile-menu .social-links li{
 	position:relative;
 	display:inline-block;
+
 	margin:0px 10px 10px;
 }
 
@@ -1686,7 +1687,8 @@
 	position:relative;
 	line-height:32px;
 	font-size:16px;
-	color:#ffffff;
+	 
+
 	-webkit-transition: all 500ms ease;
 	-moz-transition: all 500ms ease;
 	-ms-transition: all 500ms ease;
@@ -3964,7 +3966,6 @@
  .contact-section{
 	 position:relative;
 	 padding: 110px 0px;
-	 background-color: #f8fdf5;
  }
  
  .contact-section .icon-one{
@@ -4440,11 +4441,40 @@
 	 position: relative;
 	 margin-bottom: 30px;
  }
- 
+ .replay-text-arabic{
+	position: relative;
+	font-family: 'Noto Kufi Arabic', sans-serif;;
+	color: #2f3753;
+	font-weight: 400;
+	letter-spacing: 4px;
+	font-size: 30px;
+	text-transform: capitalize;
+	padding-bottom: 12px;
+	margin-bottom: 15px;
+}
+.featured-blocks .featured-block .iconss h3:before{
+	content: '';
+	position: absolute;
+left: 0;	bottom: 0;
+	width: 30px;
+	border-bottom: 2px solid white;
+}
+ .featured-blocks .featured-block .iconss .icon{
+	position: relative;
+	display: block;
+	text-align: right;
+	right: 0;
+	top: 0px;
+	padding-right:25px;
+letter-spacing: 12px;
+	line-height: 1em;
+	font-size: 80px;
+	color: #dc4549;
+	margin: 0 0 30px;
+}
  .call-to-action h2{
 	 position: relative;
 	 font-weight: 700;
-	 font-size: 48px;
 	 line-height: 1.2em;
 	 margin-bottom: 10px;
  }
@@ -6230,7 +6260,23 @@
 	 color: #2f3753;
  }
  
- 
+ .btn-style-ones .btn-title{
+	position: relative;
+	display:block;
+	z-index:1;
+	padding: 10px 30px;
+	color: black;
+	padding-top:12px;
+	float: right;
+	background: white;
+	letter-spacing: 0.03em;
+	border-radius:4px;
+	transition:all 0.3s ease;
+	-moz-transition:all 0.3s ease;
+	-webkit-transition:all 0.3s ease;
+	-ms-transition:all 0.3s ease;
+	-o-transition:all 0.3s ease;
+}
  
  .story-block-two.yellow-theme .date,
   a:hover{
@@ -6812,7 +6858,9 @@
  .blog-posts .career-block-two:last-child{
 	 margin-bottom: 0;
  }
- 
+ .blog-posts h3{
+	 margin-top: 15px;
+ }
  .career-block-two .inner-box{
 	 position: relative;
 	 display: block;
@@ -9993,8 +10041,19 @@
 	padding-left: 100px;
 	padding-right: 100px;
 	text-align: center;
-	/* height: 100px; */
+	height: 200px;
 	border-radius:5px 5px 0px 0px;
+}
+.replay-text-arabic{
+	position: relative;
+	font-family: 'Noto Kufi Arabic', sans-serif;;
+	color: #2f3753;
+	letter-spacing: 12px;
+	font-weight: 400;
+	font-size: 30px;
+	text-transform: capitalize;
+	padding-bottom: 12px;
+	margin-bottom: 15px;
 }
 
 

@@ -11,11 +11,16 @@ class Blog(models.Model):
     blogs_image = models.FileField(
         validators=[validate_image_extension], upload_to='background/blogs/',default='', blank=True)
     blogs_title = models.CharField(  max_length=300, default='', blank=True)
+    blogs_title_ar = models.CharField(  max_length=300, default='', blank=True)
 
     blogs_date = models.DateField(default=date.today, blank=True)
     blogs_desc = models.TextField(
         max_length=1000, default='', blank=True)
     blogs_location = models.CharField(
+        max_length=300, default='', blank=True)
+    blogs_desc_ar = models.TextField(
+        max_length=1000, default='', blank=True)
+    blogs_location_ar = models.CharField(
         max_length=300, default='', blank=True)
 
 
@@ -28,7 +33,11 @@ class Team(models.Model):
 
     teams_desc = models.TextField(
         max_length=1000, default='', blank=True)
+    teams_name_ar = models.CharField(
+        max_length=300, default='', blank=True)
 
+    teams_desc_ar = models.TextField(
+        max_length=1000, default='', blank=True)
         
 class TeamBackgroundImage(models.Model):
     bg_image_temas = models.FileField(
@@ -66,6 +75,24 @@ class StoryDetail(models.Model):
         max_length=1000, default='', blank=True)
     story_desc7 = models.TextField(
         max_length=1000, default='', blank=True)
+    story_location_ar = models.CharField(
+        max_length=300, default='', blank=True)
+    story_name_ar = models.CharField(
+        max_length=300, default='', blank=True)
+    story_desc1_ar = models.CharField(
+        max_length=120, default='', blank=True)
+    story_desc2_ar = models.TextField(
+        max_length=1000, default='', blank=True)
+    story_desc3_ar = models.TextField(
+        max_length=1000, default='', blank=True)
+    story_desc4_ar = models.TextField(
+        max_length=1000, default='', blank=True)
+    story_desc5_ar = models.TextField(
+        max_length=1000, default='', blank=True)
+    story_desc6_ar = models.TextField(
+        max_length=1000, default='', blank=True)
+    story_desc7_ar = models.TextField(
+        max_length=1000, default='', blank=True)
 
     class Meta:
         ordering = ['-story_date']
@@ -78,8 +105,11 @@ class StoryAndBlog(models.Model):
         validators=[validate_image_extension], default='',upload_to='background/stories_and_blogs/', blank=True)
     text_bg_stories = models.TextField(
         max_length=1000, default='', blank=True)
-
+    text_bg_stories_ar = models.TextField(
+        max_length=1000, default='', blank=True)
     image_bg_blogs = models.FileField(
         validators=[validate_image_extension], default='',upload_to='background/stories_and_blogs/', blank=True)
     text_bg_blogs = models.TextField(
+        max_length=1000, default='', blank=True)
+    text_bg_blogs_ar = models.TextField(
         max_length=1000, default='', blank=True)

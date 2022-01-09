@@ -1,21 +1,23 @@
 {% extends 'base.html' %}
 {% block body %}
-
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
        <!-- Page Banner Section -->
        <section class="page-banner">
        
         <div class="image-layer" style="background-image: url('{{whatWeDo.whatDoDetail_image_gallery.url}}')"></div>
       
         <div class="auto-container">
-            <h3>{{ whatWeDo.whatDoDetail_name }}</h3>
+            <h3>{% if LANGUAGE_CODE == 'en' %}{{whatWeDo.whatDoDetail_name}}
+                {% elif LANGUAGE_CODE == 'ar' %}{{whatWeDo.whatDoDetail_name_ar}}{% endif %}</h3>
           </div>
     
       <div class="breadcrumb-box">
         <div class="auto-container">
           <ul class="bread-crumb clearfix">
-            <li><a href="{% url 'jobs:index' %}" style="font-size: 12px">HOME</a></li>
+            <li><a class="dirBanner" href="{% url 'jobs:index' %}" style="font-size: 12px">{% trans "HOME" %}</a></li>
     
-            <li ><a href="{% url 'jobs:what_we_are_doing' %}">WHAT WE ARE DOING</a> </li>
+            <li ><a href="{% url 'jobs:what_we_are_doing' %}"> {% trans "WHAT WE ARE DOING" %}</a> </li>
           </ul>
         </div>
       </div>
@@ -30,7 +32,8 @@
         <div class="auto-container">
          <div class="post-content">
                                       <div class="lower-box story-details">
-                                <h2 style="font-size:20px;">{{ whatWeDo.whatDoDetail_name }}</h2>
+                                <h2 style="font-size:20px;">{% if LANGUAGE_CODE == 'en' %}{{whatWeDo.whatDoDetail_name}}
+                                    {% elif LANGUAGE_CODE == 'ar' %}{{whatWeDo.whatDoDetail_name_ar}}{% endif %}</h2>
                                 <div class="info-box clearfix">
                                
                                         
@@ -39,9 +42,12 @@
                             </div>
                                  
                
-                                    <p>{{whatWeDo.whatDoDetail_desc1}}</p>
-                                    <p>{{whatWeDo.whatDoDetail_desc2}}</p>
-                                    <p>{{whatWeDo.whatDoDetail_desc3}}</p>
+                                    <p>{% if LANGUAGE_CODE == 'en' %}{{whatWeDo.whatDoDetail_desc1}}
+                                        {% elif LANGUAGE_CODE == 'ar' %}{{whatWeDo.whatDoDetail_desc1_ar}}{% endif %}</p>
+                                    <p>{% if LANGUAGE_CODE == 'en' %}{{whatWeDo.whatDoDetail_desc2}}
+                                        {% elif LANGUAGE_CODE == 'ar' %}{{whatWeDo.whatDoDetail_desc2_ar}}{% endif %}</p>
+                                    <p>{% if LANGUAGE_CODE == 'en' %}{{whatWeDo.whatDoDetail_desc3}}
+                                        {% elif LANGUAGE_CODE == 'ar' %}{{whatWeDo.whatDoDetail_desc3_ar}}{% endif %}</p>
                                     <div class="row clearfix">
                                        
                                     </div>
@@ -51,13 +57,16 @@
                         
          
             
-            <p>{{whatWeDo.whatDoDetail_desc5}}</p>
+            <p>{% if LANGUAGE_CODE == 'en' %}{{whatWeDo.whatDoDetail_desc5}}
+                {% elif LANGUAGE_CODE == 'ar' %}{{whatWeDo.whatDoDetail_desc5_ar}}{% endif %}</p>
 
-            <p>{{whatWeDo.whatDoDetail_desc6}}</p>
+            <p>{% if LANGUAGE_CODE == 'en' %}{{whatWeDo.whatDoDetail_desc6}}
+                {% elif LANGUAGE_CODE == 'ar' %}{{whatWeDo.whatDoDetail_desc6_ar}}{% endif %}</p>
                                     
   <div class="news-block-three">
                             <div class="inner-box">
-                                <div class="text">                                    {{whatWeDo.whatDoDetail_desc4}}
+                                <div class="text">                               {% if LANGUAGE_CODE == 'en' %}{{whatWeDo.whatDoDetail_desc4}}
+                                    {% elif LANGUAGE_CODE == 'ar' %}{{whatWeDo.whatDoDetail_desc4_ar}}{% endif %}  
                                 </div>
                             </div>
                         </div>

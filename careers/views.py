@@ -108,7 +108,7 @@ def careerForm(request,carrer_name):
             email = EmailMessage(
                               data['carrer_name'],    
                               message,
-                              'representative@aifrd.org', ['hr@aifrd.org'],)
+                              'info@ashuor.org', ['hr@ashuor.org'],)
                           
             if request.FILES:
                             uploaded_file = request.FILES['upload_cv'] # file is the name value which you have provided in form for file field
@@ -118,6 +118,6 @@ def careerForm(request,carrer_name):
             #     send_mail.attach(message. attach.read(), )
             #     send_mail.send()
             # except  Exception as error:
-            #     return HttpResponse('Invalid header found.')
+            return HttpResponse('Invalid header found.')
     return render(request, 'formCareer.html')
 

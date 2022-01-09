@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block body %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
    <!-- End Main Header -->
 
    <!-- Page Banner Section -->
@@ -15,8 +17,8 @@
      <div class="breadcrumb-box">
        <div class="auto-container">
          <ul class="bread-crumb clearfix">
-           <li><a href="{% url 'jobs:index' %}">HOME</a></li>
-           <li class="active"> BLOGS</li>
+           <li><a class="dirBanner" href="{% url 'jobs:index' %}">{% trans "HOME" %}</a></li>
+           <li class="active"> {% trans "BLOGS" %}</li>
          </ul>
        </div>
      </div>
@@ -39,23 +41,30 @@
                             
                           
                             <div class="lower-box">
-                              <h3 style="font-size:18px; padding-bottom:10px;padding-top:10px;">{{i.blogs_title}}</h3>
-                              <div class="text"> {{i.blogs_desc}}</div>
                               <div class="bottom-box clearfix">
-                                    <div class="post-meta">
-                                        <div class="info-box clearfix">
-                                            <div class="cause-info">
-                                                <ul class="clearfix">
-                                                  <li><span class="far flaticon-calendar"></span> {{i.blogs_date}}</li>
-                                                  <li><span class="fa fa-map-marker-alt"></span> {{i.blogs_location}}</li>
-                                               </ul>
-                                            </div>
-                                           
-                                                
+                                <div class="post-meta">
+                                    <div class="info-box clearfix">
+                                        <div class="cause-info">
+                                            <ul class="clearfix">
+                                              <li><span class="far flaticon-calendar"></span> {{i.blogs_date}}</li>
+                                              <li><span class="fa fa-map-marker-alt"></span> {% if LANGUAGE_CODE == 'en' %} {{ i.blogs_location }}
+                                                {% elif LANGUAGE_CODE == 'ar' %}  {{ i.blogs_location_ar }} {% endif %}  </li>
+                                           </ul>
                                         </div>
+                                       
                                     </div>
-                                    
                                 </div>
+                                
+                            </div>
+                      
+                            <h3 style="font-size:18px; padding-bottom:10px;"> {% if LANGUAGE_CODE == 'en' %} {{ i.blogs_title }}
+                              {% elif LANGUAGE_CODE == 'ar' %}  {{ i.blogs_title_ar }} {% endif %} </h3>
+                        
+                             
+
+                              <div class="text"> {% if LANGUAGE_CODE == 'en' %} {{ i.blogs_desc }}
+                                {% elif LANGUAGE_CODE == 'ar' %}  {{ i.blogs_desc_ar }} {% endif %} </div>
+                            
                             </div>
                         </div>
                     </div>

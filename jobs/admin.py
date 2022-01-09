@@ -15,6 +15,7 @@ class DonateAdmin(admin.ModelAdmin):
                     'twitter_link',
                     'instagram_link',
                     'location_donate',
+                     'location_donate_ar',
                     'email_donate',
                     'phone_donate',
 
@@ -37,7 +38,9 @@ class GetInvolvedAdmin(admin.ModelAdmin):
                     'image_careers_getinvolved',
                     'image_joinus_getinvolved',
                     'text_careers_getinvolved',
+                    'text_careers_getinvolved_ar',
                     'text_joinus_getinvolved',
+                    'text_joinus_getinvolved_ar',
                     ]
 
 
@@ -51,6 +54,10 @@ class WhoWeAreAdmin(admin.ModelAdmin):
                     'WhoWeAre_desc2',
                     'WhoWeAre_desc3',
                     'WhoWeAre_desc4',
+                     'WhoWeAre_desc1_ar',
+                    'WhoWeAre_desc2_ar',
+                    'WhoWeAre_desc3_ar',
+                    'WhoWeAre_desc4_ar',
                    
                     ]
 
@@ -69,6 +76,11 @@ class AboutAdmin(admin.ModelAdmin):
                     'text_about2',
                     'text_about3',
                  'text_about4',
+                 'text_about_ar',
+                    'text_about1_ar',
+                    'text_about2_ar',
+                    'text_about3_ar',
+                 'text_about4_ar',
                     'image_middle_about',
 
                     ]
@@ -86,8 +98,10 @@ class VisionMissionValueAdmin(admin.ModelAdmin):
                     'Vission_Mission_Value_desc2',
                     'vission_text',
                     'mission_text',
-                    'value_text',
-
+'Vission_Mission_Value_desc1_ar',
+                    'Vission_Mission_Value_desc2_ar',
+                    'vission_text_ar',
+                    'mission_text_ar',
                     ]
 
 
@@ -96,6 +110,8 @@ class SliderAdmin(admin.ModelAdmin):
                     'slide_image_index',
                     'slide_title_index',
                     'slide_subtitle_index',
+                     'slide_title_index_ar',
+                    'slide_subtitle_index_ar',
 
                     ]
 
@@ -103,10 +119,13 @@ class SliderAdmin(admin.ModelAdmin):
 class IndexAdmin(admin.ModelAdmin):
     list_display = ['id',
                     'text_about_index',
+                     'text_about_index_ar',
                     'image_about_index',
                     'image_story_index',
                     'text_story_index',
                     'whatDoDetail_text',
+                    'text_story_index_ar',
+                    'whatDoDetail_text_ar',
 
 
 
@@ -122,6 +141,12 @@ class WhatWeAreDoingDetailAdmin(admin.ModelAdmin):
                     'whatDoDetail_desc2',
                     'whatDoDetail_desc3',
                     'whatDoDetail_desc4',
+                    
+                    'whatDoDetail_name_ar',
+                    'whatDoDetail_desc1_ar',
+                    'whatDoDetail_desc2_ar',
+                    'whatDoDetail_desc3_ar',
+                    'whatDoDetail_desc4_ar',
                     
                     'whatDoDetail_icon_name',
                     ]

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="en">
+ 
+<head>
+  <meta charset="utf-8" />
+  <title>{% trans  "Ashor Iraqi Foundation for Relief and Development" %}</title>
+ 
+  <!-- Stylesheets -->
+  <link href="{% static 'careers/css/bootstrap.css' %}" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+  {% if LANGUAGE_CODE == 'en' %}<link href="{% static 'careers/css/style.css' %}" rel="stylesheet" />
+                                  {% elif LANGUAGE_CODE == 'ar' %}<link href="{% static 'careers/css/style_arabic.css' %}" rel="stylesheet" />{% endif %}
+  
+  <!-- Responsive File -->
+  <link href="{% static 'careers/css/responsive.css' %}" rel="stylesheet" />
+
+  <link rel="shortcut icon" href="{% static 'careers/images/logo.jpg' %}" type="image/x-icon" />
+  <!-- Responsive Settings -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="icon"></div>
+    </div>
+      
+
+ {% block body%}
+  
+{% endblock body%}
+
+   
+  </div>
+  <!--End pagewrapper-->
+
+  <!--Scroll to top-->
+  <div class="scroll-to-top scroll-to-target" data-target="html">
+    <span class="flaticon-up-arrow"></span>
+  </div>
+  <script src="{% static 'careers/js/jquery.js' %}"></script>
+  <script src="{% static 'careers/js/popper.min.js' %}"></script>
+  <script src="{% static 'careers/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'careers/js/jquery-ui.js' %}"></script>
+  <script src="{% static 'careers/js/jquery.fancybox.js' %}"></script>
+  <script src="{% static 'careers/js/owl.js' %}"></script>
+  <script src="{% static 'careers/js/appear.js' %}"></script>
+  <script src="{% static 'careers/js/wow.js' %}"></script>
+
+  <script src="{% static 'careers/js/scrollbar.js' %}"></script>
+  <script src="{% static 'careers/js/validate.js' %}"></script>
+  <script src="{% static 'careers/js/paroller.js' %}"></script>
+  <script src="{% static 'careers/js/custom-script.js' %}"></script>
+</body>
+
+</html>

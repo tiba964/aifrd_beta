@@ -17,7 +17,7 @@ def what_do_api(request):
 @api_view(['GET'])
 def what_do_detail_api(request, id):
     story_detail_detail = WhatWeAreDoingDetail.objects.get(id=id)
-    data = WhatWeAreDoingDetailSerializer(what_do_detail).data
+    data = WhatWeAreDoingDetailSerializer(what_do_detail_api).data
     return Response({'data': data})
 
 

@@ -30,6 +30,7 @@ GENDER_TYPE = (
 )
 
 
+
 class Application(models.Model):
 
     full_name = models.CharField(max_length=200)
@@ -80,35 +81,22 @@ class VisionMissionValue(models.Model):
         validators=[validate_image_extension], upload_to='background/vission_mission/', )
     Vission_Mission_Value_desc1 = models.CharField(
         max_length=300, default='', blank=True, )
-
+    Vission_Mission_Value_desc1_ar = models.CharField(
+        max_length=300, default='', blank=True, )
     Vission_Mission_Value_desc2 = models.CharField(
         max_length=300, default='', blank=True, )
+    Vission_Mission_Value_desc2_ar = models.CharField(
+        max_length=300, default='', blank=True, )
     vission_text = models.CharField(
+        max_length=300, default='', blank=True, )
+    vission_text_ar = models.CharField(
         max_length=300, default='', blank=True, )
 
     mission_text = models.CharField(
         max_length=300, default='', blank=True, )
-    value_text = models.CharField(
+    mission_text_ar = models.CharField(
         max_length=300, default='', blank=True, )
-
-
-# class Contact(models.Model):
-#     # image_bg_contact = models.FileField(
-#     #     validators=[validate_image_extension], upload_to='background/contact/', )
-#     full_name = models.CharField(
-#         max_length=200, default='', blank=True, )
-#     email = models.EmailField(
-#         max_length=255, unique=True,  blank=True,db_index=True, default='', )
-#     phone_regex = RegexValidator(
-#         regex=r'^\+?1?\d{9,14}$',
-#         message="Phone number must be entered in the format: '+999999999'.\
-#              Up to 14 digits allowed.")
-#     phone = models.CharField(
-#         validators=[phone_regex],
-#         max_length=17, unique=True, default='', blank=True, )
-#     subject = models.CharField(
-#         max_length=200, default='', )
-#     message = models.TextField(default='',  blank=True,)
+   
 
 
 class Donate(models.Model):
@@ -122,6 +110,8 @@ class Donate(models.Model):
         max_length=300, default='',  blank=True,)
     location_donate = models.CharField(
         max_length=300, default='', blank=True, )
+    location_donate_ar = models.CharField(
+        max_length=300, default='', blank=True, )
     email_donate = models.CharField(
         max_length=300, default='', blank=True, )
     phone_donate = models.CharField(
@@ -129,6 +119,9 @@ class Donate(models.Model):
 
 
 class Volunteer(models.Model):
+    image_bg_volunteer = models.FileField(
+        validators=[validate_image_extension], upload_to='background/volunteer/', )
+class Replay(models.Model):
     image_bg_volunteer = models.FileField(
         validators=[validate_image_extension], upload_to='background/volunteer/', )
 
@@ -142,13 +135,23 @@ class About(models.Model):
         validators=[validate_image_extension], upload_to='background/about/', )
     text_about = models.TextField(
         max_length=1000, default='',  blank=True,)
+    text_about_ar = models.TextField(
+        max_length=1000, default='',  blank=True,)
     text_about1 = models.TextField(
+        max_length=1000, default='',  blank=True,)
+    text_about1_ar = models.TextField(
         max_length=1000, default='',  blank=True,)
     text_about2 = models.TextField(
         max_length=1000, default='',  blank=True,)
+    text_about2_ar = models.TextField(
+        max_length=1000, default='',  blank=True,)
     text_about3 = models.TextField(
         max_length=1000, default='',  blank=True,)
+    text_about3_ar = models.TextField(
+        max_length=1000, default='',  blank=True,)
     text_about4 = models.TextField(
+        max_length=1000, default='',  blank=True,)
+    text_about4_ar = models.TextField(
         max_length=1000, default='',  blank=True,)
 
 
@@ -159,9 +162,13 @@ class GetInvolved(models.Model):
         validators=[validate_image_extension], upload_to='background/about/', blank=True, )
     text_careers_getinvolved = models.TextField(
         max_length=1000, default='', blank=True, )
+    text_careers_getinvolved_ar = models.TextField(
+        max_length=1000, default='', blank=True, )
     image_joinus_getinvolved = models.FileField(
         validators=[validate_image_extension], upload_to='background/about/', blank=True, )
     text_joinus_getinvolved = models.TextField(
+        max_length=1000, default='',  blank=True,)
+    text_joinus_getinvolved_ar = models.TextField(
         max_length=1000, default='',  blank=True,)
 
 
@@ -177,14 +184,21 @@ class WhoWeAre(models.Model):
    
     WhoWeAre_desc1 = models.TextField(
         max_length=1000, default='', blank=True, )
+    WhoWeAre_desc1_ar = models.TextField(
+        max_length=1000, default='', blank=True, )
 
     WhoWeAre_desc2 = models.TextField(
+        max_length=1000, default='',  blank=True,)
+    WhoWeAre_desc2_ar = models.TextField(
         max_length=1000, default='',  blank=True,)
 
     WhoWeAre_desc3 = models.TextField(
         max_length=1000, default='',  blank=True,)
-
+    WhoWeAre_desc3_ar = models.TextField(
+        max_length=1000, default='',  blank=True,)
     WhoWeAre_desc4 = models.TextField(
+        max_length=1000, default='',  blank=True,)
+    WhoWeAre_desc4_ar = models.TextField(
         max_length=1000, default='',  blank=True,)
    
 
@@ -194,7 +208,11 @@ class Slider(models.Model):
         validators=[validate_image_extension], upload_to='background/index/', blank=True, )
     slide_title_index = models.CharField(
         max_length=300, default='', blank=True, )
+    slide_title_index_ar = models.CharField(
+        max_length=300, default='', blank=True, )
     slide_subtitle_index = models.CharField(
+        max_length=300, default='', blank=True, )
+    slide_subtitle_index_ar = models.CharField(
         max_length=300, default='', blank=True, )
 
 
@@ -203,11 +221,17 @@ class Index(models.Model):
         validators=[validate_image_extension], upload_to='background/index/', blank=True, )
     text_about_index = models.TextField(
         max_length=1000, default='',  blank=True,)
+    text_about_index_ar = models.TextField(
+        max_length=1000, default='',  blank=True,)
     image_story_index = models.FileField(
         validators=[validate_image_extension], upload_to='background/index/', blank=True, )
     text_story_index = models.TextField(
         max_length=1000, default='', blank=True, )
+    text_story_index_ar = models.TextField(
+        max_length=1000, default='', blank=True, )
     whatDoDetail_text = models.TextField(
+        max_length=1000, default='', blank=True, )
+    whatDoDetail_text_ar = models.TextField(
         max_length=1000, default='', blank=True, )
 
 
@@ -220,15 +244,26 @@ class WhatWeAreDoingDetail(models.Model):
 
     whatDoDetail_name = models.CharField(
         max_length=300, default='', blank=True, )
+    whatDoDetail_name_ar = models.CharField(
+        max_length=300, default='', blank=True, )
+
     whatDoDetail_desc1 = models.TextField(
         max_length=1000, default='', blank=True, )
-
+    whatDoDetail_desc1_ar = models.TextField(
+        max_length=1000, default='', blank=True, )
     whatDoDetail_desc2 = models.TextField(
+        max_length=1000, default='', blank=True, )
+    whatDoDetail_desc2_ar = models.TextField(
         max_length=1000, default='', blank=True, )
 
     whatDoDetail_desc3 = models.TextField(
         max_length=1000, default='', blank=True, )
+    whatDoDetail_desc3_ar = models.TextField(
+        max_length=1000, default='', blank=True, )
 
     whatDoDetail_desc4 = models.TextField(
+        max_length=1000, default='', blank=True, )
+
+    whatDoDetail_desc4_ar = models.TextField(
         max_length=1000, default='', blank=True, )
 
